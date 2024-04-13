@@ -102,7 +102,7 @@ function extractFromSource (sourceCode: string, filePath: string)
                         };
                     }
                     // Scenario 2: Handling MemberExpression specifically (original scenario) expect().toMatchSnapshot() or expect().toMatchInlineSnapshot()
-                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect"].includes(path.node.object?.callee?.name) && !(path.node.property?.name === 'rejects' || path.node.property?.name === 'resolves')) {
+                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect"].includes(path.node.object?.callee?.name) && !['rejects','resolves'].includes(path.node.property.name)) {
                         currentTestAssert = {
                             identifier: path.node.object?.callee?.name,
                             isFileSnapshot: path.node.property && path.node.property.type === 'Identifier' && path.node.property.name === 'toMatchSnapshot',
@@ -110,7 +110,7 @@ function extractFromSource (sourceCode: string, filePath: string)
                         };
                     }
                     // Scenario 3: Handling MemberExpression with promises await expect().rejects.toMatchSnapshot() or expect().resolves.toMatchInlineSnapshot()
-                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect"].includes(path.node.object?.callee?.name) && (path.node.property.name === 'rejects' || path.node.property.name === 'resolves')) {
+                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect"].includes(path.node.object?.callee?.name) && ['rejects','resolves'].includes(path.node.property.name)) {
                         // We need to look ahead to see if there's a further MemberExpression indicating a snapshot assertion.
                         let nextPath = path.parentPath;
                         if (nextPath.node.type === 'MemberExpression' && nextPath.node.property) {
