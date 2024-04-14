@@ -8,7 +8,7 @@ ai/size-limit,166,67,233,70,1,0,0
 aksonov/react-native-router-flux,5,3,3,3,1,0,0
 alangpierce/sucrase,617,1,12,1,0,1,0
 alexkuz/react-input-enhancements,12,12,12,12,1,0,0
-algolia/algoliasearch-client-javascript,224,2,628,2,0,1,0
+algolia/algoliasearch-client-javascript,224,2,629,2,0,1,0
 algolia/autocomplete,701,40,1122,58,0,1,0
 algolia/instantsearch.js,1917,228,3803,288,0,0,1
 algolia/instantsearch,4106,793,8084,943,0,0,1
@@ -95,7 +95,7 @@ chimurai/http-proxy-middleware,168,6,223,6,0,1,0
 clintonwoo/hackernews-react-graphql,64,5,65,5,1,0,0
 cloud-annotations/cloud-annotations,9,7,16,14,0,1,0
 cloudflare/cf-ui,274,176,464,299,1,0,0
-coinbase/rest-hooks,958,247,2096,377,0,0,1
+coinbase/rest-hooks,958,247,2097,377,0,0,1
 computerjazz/react-native-draggable-flatlist,3,1,3,1,1,0,0
 conventional-changelog/commitlint,952,2,1349,2,0,1,0
 coryhouse/react-slingshot,64,2,83,2,1,0,0
@@ -130,13 +130,13 @@ ealush/vest,1000,58,1768,82,0,0,1
 effector/effector,1784,1292,2558,1549,0,0,1
 egoist/bili,1,1,1,1,1,0,0
 egoist/vue-content-loader,17,1,37,1,1,0,0
-elastic/kibana,48369,4173,77853,4669,0,0,1
+elastic/kibana,48369,4173,77857,4669,0,0,1
 elderjs/elderjs,237,24,390,29,0,0,1
 electron/fiddle,740,46,1102,52,1,0,0
 elegantapp/pwa-asset-generator,40,18,44,18,1,0,0
 elemefe/element-react,98,2,218,3,1,0,0
 enisdenjo/graphql-ws,132,2,278,6,0,0,1
-expo/expo-cli,760,32,1313,40,0,0,1
+expo/expo-cli,760,32,1320,40,0,0,1
 express-validator/express-validator,259,4,460,4,1,0,0
 facebookarchive/rebound-js,20,2,41,4,1,0,0
 facebook/docusaurus,1191,227,2041,296,0,0,1
@@ -332,7 +332,7 @@ node-gh/gh,61,42,70,42,0,0,1
 nodejs/nodejs.dev,239,110,312,110,1,0,0
 nteract/nteract,523,4,895,4,1,0,0
 nuxt-community/pwa-module,6,3,6,3,1,0,0
-nuxt/nuxt.js,919,9,2387,9,1,0,0
+nuxt/nuxt.js,919,9,2389,9,1,0,0
 nvh95/jest-preview,24,2,34,2,0,1,0
 nytimes/kyt,100,10,224,14,1,0,0
 oblador/loki,46,2,56,2,0,1,0
@@ -342,7 +342,7 @@ omgovich/react-colorful,77,5,130,5,1,0,0
 onderceylan/pwa-asset-generator,40,18,44,18,1,0,0
 onivim/oni,495,17,688,17,1,0,0
 open-source-labs/reactype,80,3,121,3,1,0,0
-opensearch-project/opensearch-dashboards,11411,1603,17934,1780,0,0,1
+opensearch-project/opensearch-dashboards,11411,1603,17937,1780,0,0,1
 oscarmorrison/md-page,18,18,18,18,1,0,0
 outline/outline,856,84,1852,86,1,0,0
 outline/rich-markdown-editor,37,23,43,25,1,0,0
@@ -437,7 +437,7 @@ seek-oss/capsize,29,26,29,26,0,1,0
 seek-oss/treat,64,55,71,55,0,0,1
 seek-oss/vanilla-extract,192,156,233,191,0,0,1
 segmentio/evergreen,317,19,432,19,0,0,1
-seleniumhq/selenium-ide,1185,713,1675,728,1,0,0
+seleniumhq/selenium-ide,1185,713,1677,728,1,0,0
 selfrefactor/rambda,922,6,1496,6,0,0,1
 sequelize/umzug,94,7,225,16,0,1,0
 sergiodxa/remix-utils,149,10,257,10,0,1,0

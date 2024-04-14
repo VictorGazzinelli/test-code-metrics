@@ -121,7 +121,15 @@ function extractFromSource (sourceCode: string, filePath: string)
                             };
                         }
                     }
-                    // Scenario 4: Direct CallExpression for assert.equal()
+                    // Scenario 4: Resolves or Rejects without a snapshot assertion
+                    else if (path.node.type === 'AwaitExpression' && path.node.argument.type === 'MemberExpression' && ['resolves', 'rejects'].includes(path.node.argument.property.name)) {
+                        currentTestAssert = {
+                            identifier: path.node.argument.object?.callee?.name + '.' + path.node.argument.property.name,
+                            isFileSnapshot: false,
+                            isInlineSnapshot: false,
+                        };
+                    }
+                    // Scenario 5: Direct CallExpression for assert.equal()
                     else if (path.node.type === 'CallExpression' && path.node.callee.type === 'MemberExpression' && path.node.callee.object.name === 'assert' && path.node.callee.property.name) {
                         currentTestAssert = {
                             identifier: 'assert',
