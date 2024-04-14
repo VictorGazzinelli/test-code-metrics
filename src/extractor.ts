@@ -171,7 +171,8 @@ export function extractMetrics(folderPath: string): Metrics
   const tests: Test[] = extractTestsFromFiles(testFiles)
   const testMethods: number = tests.length
   const snapshotTestMethods: number = tests.filter(test => test.assertions.some(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot)).length;
-  const assertions: number = tests.flatMap(test => test.assertions).length;
+  // Check react-tags/react-tags due to filter
+  const assertions: number = tests.flatMap(test => test.assertions).filter(assertion => assertion.identifier === 'expect').length;
   const snapshotAssertions: number = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
   const hasOnlyFileST: number = +tests.every(test => test.assertions.filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).every(assertion => assertion.isFileSnapshot));
   const hasOnlyInlineST: number = +tests.every(test => test.assertions.filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).every(assertion => assertion.isInlineSnapshot));

@@ -140,7 +140,7 @@ expo/expo-cli,760,32,1272,40,0,0,1
 express-validator/express-validator,259,4,460,4,1,0,0
 facebookarchive/rebound-js,20,2,41,4,1,0,0
 facebook/docusaurus,1191,227,2041,296,0,0,1
-facebook/jest,3807,509,6749,632,0,0,1
+facebook/jest,3807,509,6168,632,0,0,1
 facebook/jscodeshift,149,1,277,1,1,0,0
 faceyspacey/react-universal-component,65,24,147,61,1,0,0
 faceyspacey/redux-first-router,95,20,219,22,1,0,0
@@ -231,7 +231,7 @@ jeffijoe/typesync,31,1,54,1,0,1,0
 jest-community/eslint-plugin-jest,17,1,28,1,1,0,0
 jest-community/jest-extended,436,22,698,22,1,0,0
 jest-community/vscode-jest,581,5,1567,7,0,1,0
-jestjs/jest,4164,556,7518,682,0,0,1
+jestjs/jest,4164,556,6853,682,0,0,1
 jhen0409/react-native-debugger,20,5,37,13,1,0,0
 jiayihu/pretty-algorithms,55,4,78,4,1,0,0
 jlalmes/trpc-openapi,102,32,475,57,0,1,0
@@ -402,7 +402,7 @@ react-native-community/releases,7,1,9,1,1,0,0
 react-native-webview/react-native-webview,9,1,32,1,1,0,0
 react-navigation/react-navigation,378,22,998,41,0,1,0
 react-syntax-highlighter/react-syntax-highlighter,48,37,51,37,1,0,0
-react-tags/react-tags,82,4,114,4,1,0,0
+react-tags/react-tags,82,4,110,4,1,0,0
 reactjsresources/react-webpack-babel,1,1,1,1,1,0,0
 reacttooltip/react-tooltip,17,12,48,12,1,0,0
 reakit/reakit,757,238,2393,243,0,1,0
