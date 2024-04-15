@@ -301,7 +301,7 @@ michmich/magicmirror,203,9,234,9,1,0,0
 microsoft/botframework-emulator,1412,10,3090,10,0,1,0
 microsoft/botframework-webchat,1032,88,882,96,0,1,0
 mikro-orm/mikro-orm,1431,109,7628,226,1,0,0
-millihq/terraform-aws-next-js,172,3,427,3,1,0,0
+millihq/terraform-aws-next-js,211,3,660,3,1,0,0
 mlaursen/react-md,1004,238,5436,678,0,0,1
 mobxjs/mobx-react-lite,95,5,289,6,0,0,1
 mobxjs/mobx-react,106,6,215,7,0,0,1
@@ -342,7 +342,7 @@ omgovich/react-colorful,77,5,130,5,1,0,0
 onderceylan/pwa-asset-generator,40,18,44,18,1,0,0
 onivim/oni,495,17,688,17,1,0,0
 open-source-labs/reactype,80,3,121,3,1,0,0
-opensearch-project/opensearch-dashboards,11411,1603,17937,1780,0,0,1
+opensearch-project/opensearch-dashboards,11414,1603,17937,1780,0,0,1
 oscarmorrison/md-page,18,18,18,18,1,0,0
 outline/outline,856,84,1852,86,1,0,0
 outline/rich-markdown-editor,37,23,43,25,1,0,0
@@ -518,7 +518,7 @@ vanilla-extract-css/vanilla-extract,244,207,306,257,0,0,1
 vant-ui/vant-weapp,55,53,57,54,1,0,0
 vercel/next.js,3425,208,5137,240,0,0,1
 vercel/swr,322,4,339,5,0,1,0
-vercel/vercel,828,10,1519,10,0,1,0
+vercel/vercel,835,10,1519,10,0,1,0
 vitalets/react-native-extended-stylesheet,91,1,146,1,1,0,0
 vkbansal/react-contextmenu,17,2,46,4,1,0,0
 vsmode/pixel8,7,2,19,3,1,0,0
@@ -554,7 +554,7 @@ wellyshen/react-cool-starter,30,15,32,15,1,0,0
 withastro/snowpack,273,37,451,51,0,0,1
 wix/react-native-ui-lib,550,43,930,53,1,0,0
 wolox/react-chat-widget,13,2,13,2,1,0,0
-wordpress/gutenberg,5183,564,8205,645,0,0,1
+wordpress/gutenberg,5185,564,8208,645,0,0,1
 xiaolin/react-image-gallery,1,1,1,1,1,0,0
 xotahal/react-native-material-ui,28,25,37,25,1,0,0
 yarnpkg/berry,1331,67,2002,81,1,0,0
