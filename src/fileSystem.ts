@@ -69,7 +69,7 @@ function isTestFile(filePath: string): boolean
     const isInTestsDirectory = testDirectoryRegex.test(filePath)
     const isInFixtureDirectory = filePath.includes('\\fixtures\\')
     const hasJsSuffix = filePath.endsWith('.js') || filePath.endsWith('.jsx') || filePath.endsWith('.ts') || filePath.endsWith('.tsx')
-    const hasTestSuffix = filePath.endsWith('.test.js') || filePath.endsWith('.spec.js') || filePath.endsWith('.test.ts') || filePath.endsWith('.spec.ts') || filePath.endsWith('.test.jsx') || filePath.endsWith('.spec.jsx') || filePath.endsWith('.test.tsx') || filePath.endsWith('.spec.tsx') || filePath.endsWith('spec.js') || filePath.endsWith('test.js') || filePath.endsWith('test.ts') || filePath.endsWith('tests.ts') || (filePath.split('\\').pop()!.startsWith('test') && (filePath.endsWith('.js') || filePath.endsWith('.ts')))
+    const hasTestSuffix = filePath.endsWith('.test.js') || filePath.endsWith('.spec.js') || filePath.endsWith('.test.ts') || filePath.endsWith('.spec.ts') || filePath.endsWith('.test.jsx') || filePath.endsWith('.spec.jsx') || filePath.endsWith('.test.tsx') || filePath.endsWith('.spec.tsx') || filePath.endsWith('spec.js') || filePath.endsWith('test.js') || filePath.endsWith('spec.ts') || filePath.endsWith('test.ts') || filePath.endsWith('tests.ts') || (filePath.split('\\').pop()!.startsWith('test') && (filePath.endsWith('.js') || filePath.endsWith('.ts')))
 
     return (isInTestsDirectory && hasJsSuffix && !isInFixtureDirectory) || hasTestSuffix;
 }

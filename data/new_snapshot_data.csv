@@ -306,7 +306,7 @@ mlaursen/react-md,1004,238,5436,678,0,0,1
 mobxjs/mobx-react-lite,95,5,289,6,0,0,1
 mobxjs/mobx-react,106,6,215,7,0,0,1
 mobxjs/mobx-utils,96,4,608,5,0,0,1
-modern-js-dev/garfish,203,8,624,12,1,0,0
+modern-js-dev/garfish,204,8,625,12,1,0,0
 modern-js-dev/modern.js,945,65,1958,71,0,0,1
 moment/luxon,980,1,2698,1,0,1,0
 mozmorris/react-webcam,2,1,2,1,1,0,0
@@ -438,7 +438,7 @@ seek-oss/treat,64,55,71,55,0,0,1
 seek-oss/vanilla-extract,192,156,233,191,0,0,1
 segmentio/evergreen,317,19,432,19,0,0,1
 seleniumhq/selenium-ide,1185,713,1677,728,1,0,0
-selfrefactor/rambda,922,6,1496,6,0,0,1
+selfrefactor/rambda,1488,6,1496,6,0,0,1
 sequelize/umzug,94,7,225,16,0,1,0
 sergiodxa/remix-utils,149,10,257,10,0,1,0
 serverless-nextjs/serverless-next.js,1093,23,1538,23,1,0,0
@@ -518,7 +518,7 @@ vanilla-extract-css/vanilla-extract,244,207,306,257,0,0,1
 vant-ui/vant-weapp,55,53,57,54,1,0,0
 vercel/next.js,3425,208,5137,240,0,0,1
 vercel/swr,322,4,339,5,0,1,0
-vercel/vercel,820,10,1511,10,0,1,0
+vercel/vercel,828,10,1519,10,0,1,0
 vitalets/react-native-extended-stylesheet,91,1,146,1,1,0,0
 vkbansal/react-contextmenu,17,2,46,4,1,0,0
 vsmode/pixel8,7,2,19,3,1,0,0
@@ -528,7 +528,7 @@ vuelidate/vuelidate,421,2,907,2,1,0,0
 vuese/vuese,55,28,373,112,1,0,0
 vvo/iron-session,33,23,57,35,0,1,0
 wasdk/webassemblystudio,834,13,1778,13,1,0,0
-web-infra-dev/garfish,230,11,713,15,1,0,0
+web-infra-dev/garfish,231,11,714,15,1,0,0
 webpack-contrib/compression-webpack-plugin,50,48,182,164,1,0,0
 webpack-contrib/copy-webpack-plugin,203,11,88,41,1,0,0
 webpack-contrib/extract-text-webpack-plugin,21,1,22,1,1,0,0
