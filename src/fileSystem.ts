@@ -67,7 +67,7 @@ function isTestFile(filePath: string): boolean
 {
     const isInTestsDirectory = /(?:^|\/)[^\/]*test[^\/]*(?:\/|$)/.test(filePath)
     const hasJsSuffix = /\.(js|jsx|ts|tsx)$/.test(filePath);
-    const hasTestSuffix = /(?:test|spec)\.(?:js|ts|jsx|tsx)$/.test(filePath) || (filePath.split('\\').pop()!.startsWith('test') && (filePath.endsWith('.js') || filePath.endsWith('.ts')))
+    const hasTestSuffix = /(?:test|spec)\.(?:js|ts|jsx|tsx)$/.test(filePath)
 
     return (isInTestsDirectory && hasJsSuffix) || hasTestSuffix;
 }
