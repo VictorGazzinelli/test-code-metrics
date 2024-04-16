@@ -406,6 +406,7 @@ jupyterlab/jupyterlab-git,130,1,228,2,1,0,0
 imcuttle/mometa,155,14,76,16,0,0,1
 algolia/autocomplete,701,40,1122,58,0,1,0
 patrickhulce/third-party-web,28,3,55,3,0,0,1
+vitejs/vite,185,13,254,13,0,1,0
 statelyai/xstate,921,27,1015,33,0,0,1
 kyleamathews/typography.js,25,10,43,10,1,0,0
 dflex-js/dflex,325,39,537,54,0,0,1
@@ -507,6 +508,7 @@ wix/react-native-ui-lib,550,43,930,53,1,0,0
 expo/expo-cli,760,32,1320,40,0,0,1
 netflix/falcor,447,2,753,2,0,1,0
 grommet/grommet,1110,939,1833,1133,1,0,0
+neherlab/covid19_scenarios,39,3,57,3,1,0,0
 ant-design/pro-components,750,120,1473,127,0,0,1
 seek-oss/braid-design-system,273,13,847,13,0,0,1
 mycryptohq/mycrypto,1160,10,1534,10,1,0,0

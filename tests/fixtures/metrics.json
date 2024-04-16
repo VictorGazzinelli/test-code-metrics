@@ -4070,6 +4070,16 @@
     "hasBothST": "1"
   },
   {
+    "name": "vitejs/vite",
+    "testMethods": "185",
+    "snapshotTestMethods": "13",
+    "assertions": "254",
+    "snapshotAssertions": "13",
+    "hasOnlyFileST": "0",
+    "hasOnlyInlineST": "1",
+    "hasBothST": "0"
+  },
+  {
     "name": "statelyai/xstate",
     "testMethods": "921",
     "snapshotTestMethods": "27",
@@ -5075,6 +5085,16 @@
     "snapshotTestMethods": "939",
     "assertions": "1833",
     "snapshotAssertions": "1133",
+    "hasOnlyFileST": "1",
+    "hasOnlyInlineST": "0",
+    "hasBothST": "0"
+  },
+  {
+    "name": "neherlab/covid19_scenarios",
+    "testMethods": "39",
+    "snapshotTestMethods": "3",
+    "assertions": "57",
+    "snapshotAssertions": "3",
     "hasOnlyFileST": "1",
     "hasOnlyInlineST": "0",
     "hasBothST": "0"
