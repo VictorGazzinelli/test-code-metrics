@@ -81,3 +81,13 @@ export async function writeDataAsCsvToFileAsync(data: any[], filePath: string): 
     const csvString = [headers, ...rows].join('\r\n');
     fspromises.writeFile(path.join(__dirname.replace('\\dist',''), filePath), csvString)
 }
+
+export async function writeDataAsCsvToFileSafeAsync(data: any[], filePath: string): Promise<void>
+{
+    const headers = Object.keys(data[0]).join(',');
+    const rows = data.map(obj =>
+        Object.values(obj).map(val => `"${String(val).replace(/"/g, '""')}"`).join(',')
+    );
+    const csvString = [headers, ...rows].join('\r\n');
+    fspromises.writeFile(path.join(__dirname.replace('\\dist',''), filePath), csvString)
+}

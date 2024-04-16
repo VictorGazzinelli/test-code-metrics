@@ -15,6 +15,9 @@ export interface Test
     identifier: string;
     name: string;
     assertions: Assert[];
+    startLine: number;
+    endLine: number;
+    codeSnippet: string;
 }
 
 export interface Func
@@ -28,4 +31,10 @@ export interface Assert
     identifier: string;
     isFileSnapshot: boolean;
     isInlineSnapshot: boolean;
+}
+
+export interface Data 
+{
+    metrics: Metrics;
+    tests: Test[];
 }

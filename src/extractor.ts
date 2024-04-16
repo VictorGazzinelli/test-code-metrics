@@ -2,7 +2,7 @@ import * as parser from '@babel/parser';
 //@ts-ignore
 import traverse from '@babel/traverse';
 import { getTestFiles, readFile } from "./fileSystem";
-import { Func, Metrics, Test } from "./interfaces";
+import { Data, Func, Metrics, Test } from "./interfaces";
 
 function getPlugins (filePath: string): any[]
 {
@@ -78,6 +78,9 @@ function extractFromSource (sourceCode: string, filePath: string)
                         identifier: path.node.callee.name,
                         name: args[0],
                         assertions: [],
+                        startLine: path.node.loc.start.line,
+                        endLine: path.node.loc.end.line,
+                        codeSnippet: sourceCode.split('\n').slice(path.node.loc.start.line - 1, path.node.loc.end.line).join('\n')
                     };
                     testMethods.push(currentTest);
                 }
@@ -180,7 +183,7 @@ export function extractTestsFromFiles(filesPath: string[]): Test[]
     return allTests;
 }
 
-export function extractMetrics(folderPath: string): Metrics
+export function extractData(folderPath: string): Data
 {
   const name: string = folderPath.replace('_','/')
   const testFiles: string[] = getTestFiles(folderPath)
@@ -195,5 +198,5 @@ export function extractMetrics(folderPath: string): Metrics
   const hasBothST: number = +(!hasOnlyFileST && !hasOnlyInlineST);
   const metrics: Metrics = { name, testMethods, snapshotTestMethods, assertions, snapshotAssertions, hasOnlyFileST, hasOnlyInlineST, hasBothST }
 
-  return metrics;
+  return {metrics, tests};
 }

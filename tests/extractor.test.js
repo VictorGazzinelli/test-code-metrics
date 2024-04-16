@@ -1,4 +1,4 @@
-const { extractMetrics } = require('../src/extractor');
+const { extractData } = require('../src/extractor');
 const { ensureDirectoryCreatedAsync, extractZip, getFolderPath, tryRemoveDirectory } = require('../src/fileSystem');
 const metrics = require('./fixtures/metrics.json');
 
@@ -19,16 +19,16 @@ describe('Metrics extraction', () => {
             });
 
             it(`should correctly extract metrics for ${expectedMetrics.name}`, async () => {
-                const actualMetrics = await extractMetrics(folderPath);
+                const {metrics, tests} = await extractData(folderPath)
                 const normalizedActualMetrics = {
-                    ...actualMetrics,
-                    testMethods: "" + actualMetrics.testMethods,
-                    snapshotTestMethods: "" + actualMetrics.snapshotTestMethods,
-                    assertions: "" + actualMetrics.assertions,
-                    snapshotAssertions: "" + actualMetrics.snapshotAssertions,
-                    hasOnlyFileST: "" + actualMetrics.hasOnlyFileST,
-                    hasOnlyInlineST: "" + actualMetrics.hasOnlyInlineST,
-                    hasBothST: "" + actualMetrics.hasBothST,
+                    ...metrics,
+                    testMethods: "" + metrics.testMethods,
+                    snapshotTestMethods: "" + metrics.snapshotTestMethods,
+                    assertions: "" + metrics.assertions,
+                    snapshotAssertions: "" + metrics.snapshotAssertions,
+                    hasOnlyFileST: "" + metrics.hasOnlyFileST,
+                    hasOnlyInlineST: "" + metrics.hasOnlyInlineST,
+                    hasBothST: "" + metrics.hasBothST,
                 }
                 expect(normalizedActualMetrics).toStrictEqual(expectedMetrics);
             });
