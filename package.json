@@ -7,7 +7,8 @@
     "start": "tsc && node dist/app.js",
     "pretest": "node tests/preprocess.js",
     "test": "jest --json --outputFile=output.json || (exit 0)",
-    "posttest": "node tests/postprocess.js"
+    "posttest": "node tests/postprocess.js",
+    "gentest": "tsc && node dist/generateTestFiles.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "csv-parser": "^3.0.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.3"
   },
   "dependencies": {

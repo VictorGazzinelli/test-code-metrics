@@ -2,6 +2,21 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug generateTestFiles.ts",
+            "type": "node",
+            "request": "launch",
+            "args": ["${workspaceFolder}/src/generateTestFiles.ts"],
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "runtimeExecutable": "node",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "Jest All",

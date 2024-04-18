@@ -6,6 +6,12 @@ import { attempt } from './transientFaultHandler';
 
 const fspromises = fs.promises;
 
+export function writeFile(content: string, path: string): void
+{
+    fs.writeFileSync(path, content, {encoding: 'utf-8'});
+}
+
+//writeFile
 export function readDir(path: string): fs.Dirent[]
 {
     return fs.readdirSync(path, { withFileTypes: true });

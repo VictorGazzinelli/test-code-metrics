@@ -47,7 +47,7 @@ function getPlugins (filePath: string): any[]
     ]
 }
 
-function extractFromSource (sourceCode: string, filePath: string) 
+export function extractFromSource (sourceCode: string, filePath: string) 
 {
     const testMethods: Test[] = [];
     const functions: Func[] = [];
@@ -84,7 +84,7 @@ function extractFromSource (sourceCode: string, filePath: string)
                     };
                     testMethods.push(currentTest);
                 }
-                if (currentFunction && path.node.type === 'MemberExpression' && ["expect", "jestExpect"].includes(path.node.object?.callee?.name))
+                if (currentFunction && path.node.type === 'MemberExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.object?.callee?.name))
                 { // Adjust above parameters
                     const currentFuncAssert = {
                         identifier: path.node.object?.callee?.name,
@@ -97,15 +97,15 @@ function extractFromSource (sourceCode: string, filePath: string)
                     let currentTestAssert = null;
                 
                     // Scenario 1: Direct CallExpression without MemberExpression expect(true)
-                    if (path.node.type === 'CallExpression' && ["expect", "jestExpect"].includes(path.node.callee.name) && !path.parentPath.isMemberExpression()) {
+                    if (path.node.type === 'CallExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.callee.name) && !path.parentPath.isMemberExpression()) {
                         currentTestAssert = {
                             identifier: path.node.callee.name,
                             isFileSnapshot: false,
                             isInlineSnapshot: false,
                         };
-                    }
+                    }                        
                     // Scenario 2: Handling MemberExpression specifically (original scenario) expect().toMatchSnapshot() or expect().toMatchInlineSnapshot()
-                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect"].includes(path.node.object?.callee?.name) && !['rejects','resolves'].includes(path.node.property.name)) {
+                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.object?.callee?.name) && !['rejects','resolves'].includes(path.node.property.name)) {
                         currentTestAssert = {
                             identifier: path.node.object?.callee?.name,
                             isFileSnapshot: path.node.property && path.node.property.type === 'Identifier' && path.node.property.name === 'toMatchSnapshot',
@@ -113,21 +113,17 @@ function extractFromSource (sourceCode: string, filePath: string)
                         };
                     }
                     // Scenario 3: Handling MemberExpression with promises await expect().rejects.toMatchSnapshot() or expect().resolves.toMatchInlineSnapshot()
-                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect"].includes(path.node.object?.callee?.name) && ['rejects','resolves'].includes(path.node.property.name)) {
-                        // We need to look ahead to see if there's a further MemberExpression indicating a snapshot assertion.
-                        let nextPath = path.parentPath;
-                        if (nextPath.node.type === 'MemberExpression' && nextPath.node.property) {
-                            currentTestAssert = {
-                                identifier: path.node.object?.callee?.name,
-                                isFileSnapshot: nextPath.node.property.name === 'toMatchSnapshot',
-                                isInlineSnapshot: nextPath.node.property.name === 'toMatchInlineSnapshot',
-                            };
-                        }
+                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.object?.callee?.name) && ['rejects','resolves'].includes(path.node.property.name) && path.parentPath?.node?.type === 'MemberExpression' && path.parentPath?.node?.property) {
+                        currentTestAssert = {
+                            identifier: path.node.object?.callee?.name,
+                            isFileSnapshot: path.parentPath.node.property.name === 'toMatchSnapshot',
+                            isInlineSnapshot: path.parentPath.node.property.name === 'toMatchInlineSnapshot',
+                        };
                     }
                     // Scenario 4: Resolves or Rejects without a snapshot assertion
                     else if (path.node.type === 'AwaitExpression' && path.node.argument.type === 'MemberExpression' && ['resolves', 'rejects'].includes(path.node.argument.property.name)) {
                         currentTestAssert = {
-                            identifier: path.node.argument.object?.callee?.name + '.' + path.node.argument.property.name,
+                            identifier: path.node.argument.object?.callee?.name,
                             isFileSnapshot: false,
                             isInlineSnapshot: false,
                         };
@@ -136,6 +132,13 @@ function extractFromSource (sourceCode: string, filePath: string)
                     else if (path.node.type === 'CallExpression' && path.node.callee.type === 'MemberExpression' && path.node.callee.object.name === 'assert' && path.node.callee.property.name) {
                         currentTestAssert = {
                             identifier: 'assert',
+                            isFileSnapshot: false,
+                            isInlineSnapshot: false,
+                        };
+                    }
+                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.object?.callee?.name) && ['rejects','resolves'].includes(path.node.property.name) && path.node.object.arguments?.length > 0 && path.node.object.arguments[0].arguments?.length > 0 && path.node.object.arguments[0].arguments[0].type == 'ArrayExpression') {
+                        currentTestAssert = {
+                            identifier: path.node.object?.callee?.name,
                             isFileSnapshot: false,
                             isInlineSnapshot: false,
                         };
@@ -190,8 +193,7 @@ export function extractData(folderPath: string): Data
   const tests: Test[] = extractTestsFromFiles(testFiles)
   const testMethods: number = tests.length
   const snapshotTestMethods: number = tests.filter(test => test.assertions.some(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot)).length;
-  // Check react-tags/react-tags due to filter
-  const assertions: number = tests.flatMap(test => test.assertions).filter(assertion => assertion.identifier !== 'jestExpect').length;
+  const assertions: number = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
   const snapshotAssertions: number = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
   const hasOnlyFileST: number = +tests.every(test => test.assertions.filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).every(assertion => assertion.isFileSnapshot));
   const hasOnlyInlineST: number = +tests.every(test => test.assertions.filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).every(assertion => assertion.isInlineSnapshot));
