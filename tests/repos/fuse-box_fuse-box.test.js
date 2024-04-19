@@ -42,8 +42,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\playground\\angular_playground\\src\\app\\app.component.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
+		expect(assertions).toBe(3)
     });
     it('fuse-box_fuse-box\\src\\bundle\\__tests__\\bundleRouter.test.ts', () => {
         const sourceCode = `
@@ -319,8 +321,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\bundle\\__tests__\\bundleRouter.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
+		expect(assertions).toBe(17)
     });
     it('fuse-box_fuse-box\\src\\bundleRuntime\\__tests__\\bundleRuntimeCore.test.ts', () => {
         const sourceCode = `
@@ -387,8 +391,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\bundleRuntime\\__tests__\\bundleRuntimeCore.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
+		expect(assertions).toBe(8)
     });
     it('fuse-box_fuse-box\\src\\bundleRuntime\\__tests__\\bundleSource.test.ts', () => {
         const sourceCode = `
@@ -642,8 +648,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\bundleRuntime\\__tests__\\bundleSource.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
+		expect(assertions).toBe(15)
     });
     it('fuse-box_fuse-box\\src\\cache\\__tests__\\cache.integration.test.ts', () => {
         const sourceCode = `
@@ -840,8 +848,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\cache\\__tests__\\cache.integration.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(26)
+		expect(assertions).toBe(13)
     });
     it('fuse-box_fuse-box\\src\\cache\\__tests__\\cache.meta.fs.test.ts', () => {
         const sourceCode = `
@@ -975,8 +985,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\cache\\__tests__\\cache.meta.fs.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
+		expect(assertions).toBe(11)
     });
     it('fuse-box_fuse-box\\src\\compiler\\helpers\\__tests__\\htmlEntitiesToUnicode.test.ts', () => {
         const sourceCode = `
@@ -992,8 +1004,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\helpers\\__tests__\\htmlEntitiesToUnicode.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
+		expect(assertions).toBe(1)
     });
     it('fuse-box_fuse-box\\src\\compiler\\static_compute\\__tests__\\computeBinaryExpression.test.ts', () => {
         const sourceCode = `
@@ -1109,8 +1123,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\static_compute\\__tests__\\computeBinaryExpression.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
+		expect(assertions).toBe(16)
     });
     it('fuse-box_fuse-box\\src\\compiler\\transformers\\ts\\decorators\\__tests__\\annoations.test.ts', () => {
         const sourceCode = `
@@ -1188,8 +1204,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\transformers\\ts\\decorators\\__tests__\\annoations.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
+		expect(assertions).toBe(5)
     });
     it('fuse-box_fuse-box\\src\\compiler\\__tests__\\angular.url.transformer.test.ts', () => {
         const sourceCode = `
@@ -1200,6 +1218,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\angular.url.transformer.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1281,8 +1300,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\browser.process.transform.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
+		expect(assertions).toBe(4)
     });
     it('fuse-box_fuse-box\\src\\compiler\\__tests__\\build.env.transformer.test.ts', () => {
         const sourceCode = `
@@ -1358,8 +1379,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\build.env.transformer.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
+		expect(assertions).toBe(5)
     });
     it('fuse-box_fuse-box\\src\\compiler\\__tests__\\bundle.fast.condition.test.ts', () => {
         const sourceCode = `
@@ -1432,8 +1455,10 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\bundle.fast.condition.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
+		expect(assertions).toBe(4)
     });
     it('fuse-box_fuse-box\\src\\compiler\\__tests__\\bundle.polyfill.transform.test.ts', () => {
         const sourceCode = `
@@ -1637,6 +1662,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\bundle.polyfill.transform.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -2162,6 +2188,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\class-constructor-properties.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(30)
     });
@@ -2351,6 +2378,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\common-features.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -2496,6 +2524,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\computed.statement.import.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -2968,6 +2997,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\decorators.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(32)
     });
@@ -3012,6 +3042,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\dynamic.import.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -3166,6 +3197,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\enum.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -3271,6 +3303,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\es.exports.statement.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -3830,6 +3863,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\es.exports.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(46)
     });
@@ -4244,6 +4278,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\es.imports.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(29)
     });
@@ -4445,6 +4480,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\jsx.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -4496,6 +4532,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\namespaces.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4567,6 +4604,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\NullishCoalescing.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -4757,6 +4795,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\optionalChaning\\optional.chaining.transformer.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -4923,6 +4962,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\process.transform.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -5050,6 +5090,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\require.statement.interceptor.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -5903,6 +5944,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compiler\\__tests__\\scopes.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(59)
     });
@@ -5959,6 +6001,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compilerOptions\\__tests__\\compilerOptions.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -6086,6 +6129,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\compilerOptions\\__tests__\\typescriptReferences.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -6126,6 +6170,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\config\\__tests__\\config.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6313,6 +6358,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\core\\__tests__\\config.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6364,6 +6410,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\core\\__tests__\\WeakModuleReferences.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -6552,6 +6599,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\devServer\\__tests__\\devServer.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6686,6 +6734,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\devServer\\__tests__\\devServerProps.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -6813,6 +6862,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\devServer\\__tests__\\hmrServer.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6926,6 +6976,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\integration\\__tests__\\webIndex.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6977,6 +7028,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\interceptor\\__tests__\\interceptor.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -7003,6 +7055,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\moduleResolver\\__tests__\\module.resolution.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7015,6 +7068,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\output\\__tests__\\distWriter.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7107,6 +7161,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\output\\__tests__\\OutputConfigConverter.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -7141,6 +7196,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\output\\__tests__\\stripHash.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7258,6 +7314,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\plugins\\core\\__tests__\\plugin_angular.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -7323,6 +7380,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\plugins\\core\\__tests__\\plugin_css_in_jsx.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7367,6 +7425,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\plugins\\core\\__tests__\\plugin_replace.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -7427,6 +7486,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\plugins\\__tests__\\pluginUtils.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -8097,6 +8157,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\production\\__tests__\\CodeSplitting.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -8138,6 +8199,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\production\\__tests__\\ModuleTree.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -8282,6 +8344,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\production\\__tests__\\WarmupPhase_Export.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -8579,6 +8642,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\production\\__tests__\\WarmupPhase_Import.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -8726,6 +8790,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\resolver\\__tests__\\fileLookup.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -9013,6 +9078,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\resolver\\__tests__\\nodeModuleLookup.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(28)
     });
@@ -9148,6 +9214,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\resolver\\__tests__\\pathsLookup.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -9615,6 +9682,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\resolver\\__tests__\\resolver.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -9688,6 +9756,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\resolver\\__tests__\\shared.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -9933,6 +10002,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\sparky\\__tests__\\sparky.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -10107,6 +10177,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\stylesheet\\__tests__\\cssParser.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -10227,6 +10298,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\stylesheet\\__tests__\\cssResolveURL.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -10284,6 +10356,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\stylesheet\\__tests__\\cssSourceMap.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -10522,6 +10595,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\utils\\__tests__\\utils.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(34)
     });
@@ -10608,6 +10682,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\webIndex\\__tests__\\webIndex.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -10848,6 +10923,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\__tests__\\codeSplitting.integration.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -11101,6 +11177,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\__tests__\\css.integration.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -11284,6 +11361,7 @@ describe('fuse-box_fuse-box', () => {
 
 		const tests = extractFromSource(sourceCode, 'fuse-box_fuse-box\\src\\__tests__\\dependencies.integration.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });

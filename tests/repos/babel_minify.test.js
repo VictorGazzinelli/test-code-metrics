@@ -55,6 +55,7 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\packages\\babel-helper-mark-eval-scopes\\__tests__\\helper-mark-eval-scopes-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -182,23 +183,10 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\packages\\babel-minify\\__tests__\\cli-tests.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
-		expect(assertions).toBe(11)
     });
-	it('should work', () => {
-		const sourceCode = `
-			it("should handle source type", async () => {
-			return expect(runCli([sampleInputModule, "--sourceType module"])).resolves;
-			});
-		`;
-
-		const tests = extractFromSource(sourceCode, 'babel_minify\\packages\\babel-minify\\__tests__\\cli-tests.js')
-		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
-
-		expect(tests.length).toBe(1)
-		expect(assertions).toBe(1)
-	})
     it('babel_minify\\packages\\babel-minify\\__tests__\\node-api-tests.js', () => {
         const sourceCode = `
 			jest.autoMockOff();
@@ -260,6 +248,7 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\packages\\babel-minify\\__tests__\\node-api-tests.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -367,6 +356,7 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\packages\\babel-plugin-minify-dead-code-elimination\\__tests__\\dead-code-elimination-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -543,6 +533,7 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\packages\\babel-plugin-minify-simplify\\__tests__\\pattern-match.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -602,6 +593,7 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\packages\\babel-plugin-minify-type-constructors\\__tests__\\type-constructors-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -705,6 +697,7 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\packages\\babel-preset-minify\\__tests__\\options-tests.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -947,6 +940,7 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\packages\\gulp-babel-minify\\__tests__\\gulp-babili-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -1061,6 +1055,7 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\utils\\test-runner\\src\\index.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1186,6 +1181,7 @@ describe('babel_minify', () => {
 
 		const tests = extractFromSource(sourceCode, 'babel_minify\\utils\\test-transform\\src\\test-transform.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });

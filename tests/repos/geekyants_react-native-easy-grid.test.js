@@ -16,6 +16,7 @@ describe('geekyants_react-native-easy-grid', () => {
 
 		const tests = extractFromSource(sourceCode, 'geekyants_react-native-easy-grid\\Components\\_tests_\\Col.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -34,6 +35,7 @@ describe('geekyants_react-native-easy-grid', () => {
 
 		const tests = extractFromSource(sourceCode, 'geekyants_react-native-easy-grid\\Components\\_tests_\\Grid.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -52,6 +54,7 @@ describe('geekyants_react-native-easy-grid', () => {
 
 		const tests = extractFromSource(sourceCode, 'geekyants_react-native-easy-grid\\Components\\_tests_\\Row.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });

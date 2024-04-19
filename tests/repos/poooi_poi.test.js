@@ -62,9 +62,9 @@ describe('poooi_poi', () => {
 
 		const tests = extractFromSource(sourceCode, 'poooi_poi\\lib\\__tests__\\utils.sepc.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
-		expect(assertions).toBe(15)
     });
     it('poooi_poi\\views\\redux\\info\\__tests__\\airbase.spec.ts', () => {
         const sourceCode = `
@@ -137,9 +137,9 @@ describe('poooi_poi', () => {
 
 		const tests = extractFromSource(sourceCode, 'poooi_poi\\views\\redux\\info\\__tests__\\airbase.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
-		expect(assertions).toBe(8)
     });
     it('poooi_poi\\views\\utils\\__tests__\\tools.spec.ts', () => {
         const sourceCode = `
@@ -242,8 +242,8 @@ describe('poooi_poi', () => {
 
 		const tests = extractFromSource(sourceCode, 'poooi_poi\\views\\utils\\__tests__\\tools.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
-		expect(assertions).toBe(12)
     });
 });

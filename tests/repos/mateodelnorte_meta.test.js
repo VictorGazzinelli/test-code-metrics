@@ -81,6 +81,7 @@ describe('mateodelnorte_meta', () => {
 
 		const tests = extractFromSource(sourceCode, 'mateodelnorte_meta\\lib\\__tests__\\findPlugins.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -99,6 +100,7 @@ describe('mateodelnorte_meta', () => {
 
 		const tests = extractFromSource(sourceCode, 'mateodelnorte_meta\\__tests__\\index.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -152,6 +154,7 @@ describe('mateodelnorte_meta', () => {
 
 		const tests = extractFromSource(sourceCode, 'mateodelnorte_meta\\__tests__\\plugins\\index.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });

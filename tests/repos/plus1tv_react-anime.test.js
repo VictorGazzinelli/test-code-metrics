@@ -26,6 +26,7 @@ describe('plus1tv_react-anime', () => {
 
 		const tests = extractFromSource(sourceCode, 'plus1tv_react-anime\\tests\\basic.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -64,6 +65,7 @@ describe('plus1tv_react-anime', () => {
 
 		const tests = extractFromSource(sourceCode, 'plus1tv_react-anime\\tests\\custom-components.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -131,6 +133,7 @@ describe('plus1tv_react-anime', () => {
 
 		const tests = extractFromSource(sourceCode, 'plus1tv_react-anime\\tests\\dynamic-list.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -2014,6 +2017,7 @@ describe('plus1tv_react-anime', () => {
 
 		const tests = extractFromSource(sourceCode, 'plus1tv_react-anime\\tests\\svg-paths.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });

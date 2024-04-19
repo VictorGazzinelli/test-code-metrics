@@ -47,8 +47,11 @@ function writeTestFiles(groupedObjects: GroupedObjects, directory: string): void
             content += `\n`;
             content += `\t\tconst tests = extractFromSource(sourceCode, '${obj.path.replace(/\\/g, '\\\\')}')\n`;
             content += `\t\tconst assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;\n`;
+            content += `\t\tconst snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;\n`;
             content += `\n`;
             content += `\t\texpect(tests.length).toBe(${obj.tests.length})`;
+            content += `\t\texpect(assertions).toBe(${obj.tests.flatMap((test: any) => test.assertions).filter((assertion:any) => ['expect', 'assert'].includes(assertion.identifier)).length})`;
+            content += `\t\texpect(snapshotAssertions).toBe(${obj.tests.flatMap((test:any) => test.assertions).filter((assertion:any) => assertion.isFileSnapshot || assertion.isInlineSnapshot).length})`;
             content += `\n`;
             content += `    });\n`;
         }

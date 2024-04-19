@@ -445,6 +445,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\actions\\local\\channel.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -534,6 +535,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\client\\rest\\index.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -558,6 +560,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\app_version\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -657,6 +660,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\channel_item\\channel_item.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -818,6 +822,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\channel_list_row\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -864,6 +869,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\custom_status\\clear_button.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -919,6 +925,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\custom_status\\custom_status_emoji.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -964,6 +971,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\custom_status\\custom_status_text.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1002,6 +1010,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\error_text\\error_text.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1093,6 +1102,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\friendly_date\\friendly_date.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1118,6 +1128,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\loading\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1148,6 +1159,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\loading_error\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -4132,6 +4144,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\markdown\\transform.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -4173,6 +4186,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\post_list\\post\\body\\content\\message_attachments\\attachment_footer.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4384,6 +4398,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\post_list\\post\\system_message\\system_message_helpers.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -4431,6 +4446,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\post_list\\thread_overview\\thread_overview.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4485,6 +4501,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\server_icon\\server_icon.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -4555,6 +4572,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\threads_button\\threads_button.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -4729,6 +4747,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\user_list\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -4794,6 +4813,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\components\\user_status\\user_status.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -4900,6 +4920,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\manager\\test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -4993,6 +5014,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\app_data_operator\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -5059,6 +5081,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\app_data_operator\\transformers\\test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -5147,6 +5170,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\handlers\\category.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -5475,6 +5499,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\handlers\\channel.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -5538,6 +5563,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\handlers\\group.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -5688,6 +5714,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\handlers\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -6106,6 +6133,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\handlers\\post.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -6158,6 +6186,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\handlers\\reaction.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6351,6 +6380,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\handlers\\team.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -6596,6 +6626,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\handlers\\thread.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -6761,6 +6792,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\handlers\\user.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -6833,6 +6865,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\transformers\\category.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -7022,6 +7055,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\transformers\\channel.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -7116,6 +7150,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\transformers\\general.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -7159,6 +7194,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\transformers\\group.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7327,6 +7363,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\transformers\\post.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -7371,6 +7408,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\transformers\\reaction.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7526,6 +7564,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\transformers\\team.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -7618,6 +7657,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\server_data_operator\\transformers\\user.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -7743,6 +7783,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\operator\\utils\\test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -7809,6 +7850,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\schema\\app\\test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -8472,6 +8514,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\database\\schema\\server\\test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -8524,6 +8567,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\helpers\\database\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -8973,6 +9017,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\managers\\draft_upload_manager\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -9370,6 +9415,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\products\\calls\\actions\\calls.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -10630,6 +10676,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\products\\calls\\state\\actions.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(22)
     });
@@ -10738,6 +10785,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\products\\calls\\utils.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -11001,6 +11049,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\queries\\servers\\system.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -11059,6 +11108,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\home\\channel_list\\categories_list\\categories\\body\\category_body.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11096,6 +11146,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\home\\channel_list\\categories_list\\categories\\categories.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11143,6 +11194,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\home\\channel_list\\categories_list\\categories\\header\\header.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11186,6 +11238,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\home\\channel_list\\categories_list\\categories\\unreads\\unreads.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11220,6 +11273,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\home\\channel_list\\categories_list\\header\\header.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11331,6 +11385,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\home\\channel_list\\categories_list\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -11356,6 +11411,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\home\\channel_list\\categories_list\\subheader\\search_field\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11524,6 +11580,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\integration_selector\\channel_list_row\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -11601,6 +11658,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\integration_selector\\custom_list\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11659,6 +11717,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\integration_selector\\custom_list_row\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11713,6 +11772,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\integration_selector\\option_list_row\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11839,6 +11899,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\integration_selector\\selected_option\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -11967,6 +12028,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\integration_selector\\selected_options\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -12018,6 +12080,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\sso\\sso.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -12077,6 +12140,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\screens\\sso\\sso_with_redirect_url.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -12152,6 +12216,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\utils\\markdown\\latex.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -12185,6 +12250,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\utils\\server\\server.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -12243,6 +12309,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\utils\\tap\\test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -12286,6 +12353,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\utils\\theme\\test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -12617,6 +12685,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\app\\utils\\url\\test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -12709,6 +12778,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\about.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -12856,6 +12926,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\account_menu.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -12923,6 +12994,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\advanced_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -13033,6 +13105,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\auto_responder_notification_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -13134,6 +13207,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\clock_display_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -13344,6 +13418,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\custom_status.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -13449,6 +13524,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\display_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -13583,6 +13659,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\edit_profile.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -13697,6 +13774,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\email_notification_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -13807,6 +13885,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\mention_notification_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -13925,6 +14004,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\notification_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -14045,6 +14125,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\push_notification_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -14161,6 +14242,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -14265,6 +14347,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\theme_display_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -14372,6 +14455,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\account\\timezone_display_settings.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -14705,6 +14789,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\at_mention.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -14972,6 +15057,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\channel_mention.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -15081,6 +15167,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\channel_post_draft.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -15187,6 +15274,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\create_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -15300,6 +15388,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\edit_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -15411,6 +15500,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\edit_channel_header.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -15528,6 +15618,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\edit_post.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -15704,6 +15795,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\emoji_suggestion.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -15878,6 +15970,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\slash_suggestion.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -15993,6 +16086,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\autocomplete\\thread_post_draft.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -16138,6 +16232,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\archive_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -16344,6 +16439,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\browse_channels.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -16457,6 +16553,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\channel_info.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -16690,6 +16787,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\channel_list.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -16804,6 +16902,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\channel_post_list.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -16890,6 +16989,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\convert_to_private_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -17054,6 +17154,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\create_channel_and_edit_channel_header.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -17233,6 +17334,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\create_direct_message.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -17421,6 +17523,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\edit_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -17580,6 +17683,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\favorite_and_unfavorite_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -17760,6 +17864,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\find_channels.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -17869,6 +17974,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\leave_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -17974,6 +18080,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\mute_and_unmute_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -18082,6 +18189,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\channels\\unarchive_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -18251,6 +18359,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\at_mention.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -18355,6 +18464,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\channel_link.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -18455,6 +18565,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\channel_mention.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -18645,6 +18756,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\emojis_and_reactions.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -18759,6 +18871,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\follow_and_unfollow_messsage.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -18835,6 +18948,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\markdown_block_quote.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -18932,6 +19046,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\markdown_code.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -19008,6 +19123,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\markdown_heading.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -19097,6 +19213,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\markdown_image.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -19191,6 +19308,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\markdown_latex.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -19302,6 +19420,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\markdown_list.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -19379,6 +19498,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\markdown_separator.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -19618,6 +19738,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\markdown_table.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -19752,6 +19873,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\message_delete.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -19951,6 +20073,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\message_draft.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -20113,6 +20236,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\message_edit.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -20229,6 +20353,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\message_post.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -20371,6 +20496,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\message_reply.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -20525,6 +20651,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\permalink.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -20649,6 +20776,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\pin_and_unpin_message.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -20773,6 +20901,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\messaging\\save_and_unsave_message.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -21035,6 +21164,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\search\\pinned_messages.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -21299,6 +21429,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\search\\recent_mentions.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -21560,6 +21691,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\search\\saved_messages.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -22089,6 +22221,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\search\\search_messages.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -22212,6 +22345,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\server_login\\connect_to_server.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -22320,6 +22454,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\server_login\\login_by_email.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -22683,6 +22818,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\server_login\\server_list.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -22892,6 +23028,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\smoke_test\\account.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -23063,6 +23200,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\smoke_test\\autocomplete.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -23282,6 +23420,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\smoke_test\\channels.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -23560,6 +23699,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\smoke_test\\messaging.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -23710,6 +23850,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\smoke_test\\search.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -23832,6 +23973,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\smoke_test\\server_login.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -24000,6 +24142,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\smoke_test\\threads.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -24257,6 +24400,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\teams\\invite_people.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -24458,6 +24602,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\threads\\follow_and_unfollow_thread.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -24672,6 +24817,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\threads\\global_threads.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -24865,6 +25011,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\threads\\mark_thread_as_read_and_unread.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -25005,6 +25152,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\threads\\open_thread_in_channel.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -25141,6 +25289,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\threads\\reply_to_thread.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -25279,6 +25428,7 @@ describe('mattermost_mattermost-mobile', () => {
 
 		const tests = extractFromSource(sourceCode, 'mattermost_mattermost-mobile\\detox\\e2e\\test\\threads\\save_and_unsave_thread.e2e.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });

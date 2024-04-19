@@ -1331,6 +1331,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\animationHooks.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(62)
     });
@@ -2461,6 +2462,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\animationHooksFunc.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(58)
     });
@@ -3019,6 +3021,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\async-setstate.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -3243,6 +3246,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\blueprints.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -5358,6 +5362,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\children.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(43)
     });
@@ -5391,6 +5396,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\clonenode.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -5845,6 +5851,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\columnrender.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -6072,6 +6079,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\component.comparator.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -6380,6 +6388,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\componentlifecycle.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -6772,6 +6781,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\components2.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -7131,6 +7141,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\createref.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -7180,6 +7191,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\defaultprops-typings.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7894,6 +7906,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\error.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -8100,6 +8113,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\forceUpdate.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -8925,6 +8939,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\formelements.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(28)
     });
@@ -9179,6 +9194,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\forward-ref.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -10309,6 +10325,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\fragments.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -11590,6 +11607,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\hooks.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(24)
     });
@@ -11789,6 +11807,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\input.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -12316,6 +12335,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\instancenull.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -12538,6 +12558,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\issue-1369.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -13065,6 +13086,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\lifecycle.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -13128,6 +13150,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\link.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -13368,6 +13391,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\linkEvent.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -13823,6 +13847,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\mixedFormElements.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -15734,6 +15759,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\newlifecycle.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(42)
     });
@@ -15901,6 +15927,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\patching-jsx.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -16679,6 +16706,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\patching.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -18104,6 +18132,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\portal.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(28)
     });
@@ -18453,6 +18482,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\rendering.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -18571,6 +18601,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\select.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -19181,6 +19212,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\select2.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -20318,6 +20350,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\setState.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -21237,6 +21270,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\singlepatches.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -21383,6 +21417,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\state.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -21555,6 +21590,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\styles.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -21679,6 +21715,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\svgXlink.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -21815,6 +21852,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\topcontext.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -21898,6 +21936,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\transition.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -22239,6 +22278,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\types.children.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -22528,6 +22568,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\types.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(22)
     });
@@ -22773,6 +22814,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno\\__tests__\\validations.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -23134,6 +23176,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-animation\\__tests__\\animatedAllComponent.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -23492,6 +23535,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-animation\\__tests__\\animatedComponent.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -23532,6 +23576,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-animation\\__tests__\\animatedComponentTypings.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -23882,6 +23927,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-animation\\__tests__\\animatedMoveComponent.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -23909,6 +23955,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-animation\\__tests__\\index.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -23925,6 +23972,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-animation\\__tests__\\utils.spec.server-nodom.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -24064,6 +24112,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-animation\\__tests__\\utils.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -24729,6 +24778,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-clone-vnode\\__tests__\\cloneVNode.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(38)
     });
@@ -24766,6 +24816,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\clonevnode.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -25127,6 +25178,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\compat_children.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -25283,6 +25335,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\findDOMNodes.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -25403,6 +25456,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\isValidElement.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -25666,6 +25720,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\lifecycle.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -25974,6 +26029,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\misc.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(26)
     });
@@ -26062,6 +26118,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\onlyChild.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -26499,6 +26556,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactChildren.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -26865,6 +26923,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactClass.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -27132,6 +27191,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactComponent.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -27651,6 +27711,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactComponentLifeCycle.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -27883,6 +27944,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactCompositeComponentState.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -28025,6 +28087,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactDOM.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -28260,6 +28323,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactDOMComponent.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -28613,6 +28677,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactElement.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -28854,6 +28919,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactElementClone.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -29277,6 +29343,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactES6Class.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(29)
     });
@@ -29534,6 +29601,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactJSXElement.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -29828,6 +29896,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactMount.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -29923,6 +29992,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactMountDestruction.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -30169,6 +30239,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactMultiChild.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -30299,6 +30370,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactPureComponent.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -30568,6 +30640,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\ReactStatelessComponent.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -30690,6 +30763,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\SelectValueElement.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -30734,6 +30808,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\styles.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -30798,6 +30873,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\svg.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -30856,6 +30932,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\testutils.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -30896,6 +30973,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-compat\\__tests__\\warnings.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -31048,6 +31126,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-class\\__tests__\\createClass.ext.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -31314,6 +31393,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-class\\__tests__\\createClass.ext.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -39606,6 +39686,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-class\\__tests__\\createClass.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -39812,6 +39893,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\callback.in.ctr.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -40205,6 +40287,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\children.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -41252,6 +41335,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\components.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(31)
     });
@@ -44122,6 +44206,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\components.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(84)
     });
@@ -45199,6 +45284,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\createElement.fragment.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -45406,6 +45492,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\createElement.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -45500,6 +45587,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\createElementTyped.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -45656,6 +45744,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\creation.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -46717,6 +46806,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\elements.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(49)
     });
@@ -47529,6 +47619,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\events.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(24)
     });
@@ -47810,6 +47901,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\hooks.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -48130,6 +48222,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\patching.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -49434,6 +49527,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\patchKeyedChildren.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(53)
     });
@@ -49663,6 +49757,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\patchMixedKeyed.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -50128,6 +50223,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\patchNonKeyedChildren.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(41)
     });
@@ -50639,6 +50735,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\select.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -51036,6 +51133,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\svg.ext.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -51290,6 +51388,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\svg.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -51721,6 +51820,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\text.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -52966,6 +53066,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\update.ext.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(53)
     });
@@ -53678,6 +53779,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-create-element\\__tests__\\update.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -53951,6 +54053,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-extras\\__tests__\\extras.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -54093,6 +54196,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-hydrate\\__tests__\\hydrate-forward-ref.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -55378,6 +55482,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-hydrate\\__tests__\\hydrate.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(31)
     });
@@ -55784,6 +55889,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-hyperscript\\__tests__\\hyperscript.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(26)
     });
@@ -56056,6 +56162,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\context.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -56129,6 +56236,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\extra\\eventemitter.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -56217,6 +56325,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\generic.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -56661,6 +56770,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\inject.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -56830,6 +56940,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\misc.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -57544,6 +57655,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\observer.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -58027,6 +58139,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\observerPatch.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -58562,6 +58675,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\observerWrap.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -58619,6 +58733,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\stateless.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -58723,6 +58838,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\transactions.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -58812,6 +58928,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-mobx\\__tests__\\types.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -61361,6 +61478,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-redux\\__tests__\\components\\connect.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(56)
     });
@@ -61582,6 +61700,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-redux\\__tests__\\components\\Provider.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -61662,6 +61781,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-redux\\__tests__\\components\\Provider.typings.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -61771,6 +61891,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-redux\\__tests__\\functional.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -61836,6 +61957,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-redux\\__tests__\\utils\\shallowEqual.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -61867,6 +61989,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-redux\\__tests__\\utils\\wrapActionCreators.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -61918,6 +62041,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\BrowserRouter.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -62034,6 +62158,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\github1176.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -62079,6 +62204,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\HashRouter.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -62157,6 +62283,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\integration.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -62327,6 +62454,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\issue1322.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -62393,6 +62521,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\Link.ext.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -62574,6 +62703,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\Link.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -63265,6 +63395,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\loaderOnRoute.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -63640,6 +63771,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\loaderWithSwitch.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -63733,6 +63865,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\matchPath.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -63835,6 +63968,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\MemoryRouter.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -64028,6 +64162,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\mobx-router.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -64566,6 +64701,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\NavLink.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(32)
     });
@@ -64668,6 +64804,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\Prompt.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -65044,6 +65181,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\Route.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(23)
     });
@@ -65123,6 +65261,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\Route.typings.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -65243,6 +65382,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\Router.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -65681,6 +65821,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\Switch.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -65785,6 +65926,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\SwitchMount.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -65911,6 +66053,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-router\\__tests__\\withRouter.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -66028,6 +66171,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\animationHooks.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -66700,6 +66844,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\creation-queuestream.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -66815,6 +66960,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\creation-stream.spec.server.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -67386,6 +67532,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\creation-stream.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -67517,6 +67664,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\creation.spec.server.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -68075,6 +68223,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\creation.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -68306,6 +68455,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\hydration-ext.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -68342,6 +68492,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\hydration.spec.server.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -69410,6 +69561,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\hydration.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -69476,6 +69628,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\loaderOnRoute.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -69529,6 +69682,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\observer.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -69649,6 +69803,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\props-context.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -69736,6 +69891,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\security.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -69918,6 +70074,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\ssr-forwardref.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -70149,6 +70306,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\StaticRouter.spec.server-nodom.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -70177,6 +70335,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-server\\__tests__\\utils.spec.server.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -70391,6 +70550,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-test-utils\\__tests__\\snapshots.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -70450,6 +70610,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-test-utils\\__tests__\\testUtils.jest.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -71175,6 +71336,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-test-utils\\__tests__\\testUtils.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(47)
     });
@@ -71323,6 +71485,7 @@ describe('infernojs_inferno', () => {
 
 		const tests = extractFromSource(sourceCode, 'infernojs_inferno\\packages\\inferno-utils\\__tests__\\utils.spec.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });

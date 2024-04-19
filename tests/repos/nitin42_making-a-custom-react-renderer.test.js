@@ -23,6 +23,7 @@ describe('nitin42_making-a-custom-react-renderer', () => {
 
 		const tests = extractFromSource(sourceCode, 'nitin42_making-a-custom-react-renderer\\__tests__\\Text.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });

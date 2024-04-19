@@ -33,6 +33,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\amp-comscore-analytics.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -85,6 +86,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\amp-google-analytics.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -121,6 +123,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\amp-google-tag-manager-analytics.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -161,6 +164,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\amp.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -236,6 +240,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -353,6 +358,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\comscore-analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -378,6 +384,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\custom-configuration.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -427,6 +434,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\custom-render.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -523,6 +531,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\dynamic-public-path.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -651,6 +660,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\emotion.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -702,6 +712,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\fonts\\fonts.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -767,6 +778,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\google-ad-manager.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -907,6 +919,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\google-analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -970,6 +983,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\google-tag-manager-analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -1024,6 +1038,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\head.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -1051,6 +1066,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\html2react.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -1113,6 +1129,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\iframe.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -1145,6 +1162,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\image.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1176,6 +1194,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\loadable.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1216,6 +1235,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\render.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1276,6 +1296,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\script.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -1329,6 +1350,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\server-extensibility.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -1383,6 +1405,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\slot-and-fill.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -1439,6 +1462,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\smart-adserver.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -1473,6 +1497,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\source-auth.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1507,6 +1532,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\switch.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1670,6 +1696,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\tiny-router.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -1697,6 +1724,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\use-in-view.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -3537,6 +3565,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\frontity-01\\use-infinite-scroll.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(29)
     });
@@ -3571,6 +3600,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\misc-01\\robots.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -3720,6 +3750,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\amp.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -3977,6 +4008,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\head-tags-aioseop-3.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -4260,6 +4292,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\head-tags-aioseop-4.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -4522,6 +4555,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\head-tags-wpseo.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -4785,6 +4819,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\head-tags-yoast-13.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -4851,6 +4886,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\mars-theme-amp.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -5347,6 +5383,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\redirections.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(31)
     });
@@ -5381,6 +5418,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\special-characters-in-url.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -5425,6 +5463,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\wp-basic-tests.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -5716,6 +5755,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\wp-comments.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -5798,6 +5838,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\wp-source-errors.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6052,6 +6093,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\integration\\wordpress-01\\yoast-package.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6094,6 +6136,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\amp-comscore-analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6131,6 +6174,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\amp.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6264,6 +6308,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -6350,6 +6395,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\comscore-analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -6485,6 +6531,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\emotion.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6547,6 +6594,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\google-ad-manager.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -6686,6 +6734,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\google-analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -6771,6 +6820,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\google-tag-manager-analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -6852,6 +6902,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\head.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -6897,6 +6948,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\html2react.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -6940,6 +6992,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\loadable.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -6992,6 +7045,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\script.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -7068,6 +7122,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\slot-and-fill.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -7119,6 +7174,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\smart-adserver.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -7162,6 +7218,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\switch.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -7370,6 +7427,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\tiny-router.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -7415,6 +7473,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\module\\use-in-view.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -7457,6 +7516,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\ssr\\amp-comscore-analytics.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7494,6 +7554,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\ssr\\amp.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7564,6 +7625,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\ssr\\emotion.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -7645,6 +7707,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\ssr\\head.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -7679,6 +7742,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\ssr\\html2react.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -7708,6 +7772,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\ssr\\loadable.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7740,6 +7805,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\ssr\\slot-and-fill.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7766,6 +7832,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\ssr\\switch.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7834,6 +7901,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\e2e\\selenium\\tests\\specs\\ssr\\tiny-router.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -7934,6 +8002,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\amp\\src\\__tests__\\amp.server.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -8136,6 +8205,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\amp\\src\\__tests__\\amp.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -8660,6 +8730,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\amp\\src\\__tests__\\processors.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -8768,6 +8839,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\analytics\\__tests__\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -9539,6 +9611,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\components\\link\\__tests__\\link.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -9720,6 +9793,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\components\\link\\__tests__\\utils.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -9931,6 +10005,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\components\\__tests__\\iframe.jsdom.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -10026,6 +10101,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\components\\__tests__\\iframe.node.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -10109,6 +10185,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\components\\__tests__\\image.jsdom.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10208,6 +10285,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\components\\__tests__\\image.node.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -10292,6 +10370,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\components\\__tests__\\script.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -10379,6 +10458,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\components\\__tests__\\switch.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -10510,6 +10590,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\comscore-analytics\\src\\components\\__tests__\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -10820,6 +10901,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\connect\\src\\__tests__\\connect.tests.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -11035,6 +11117,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\connect\\src\\__tests__\\create-store.tests.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -11218,6 +11301,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\connect\\src\\__tests__\\types.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -11236,6 +11320,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\config\\babel\\__tests__\\index.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -11324,6 +11409,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\config\\webpack\\__tests__\\index.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -11396,6 +11482,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\config\\webpack\\__tests__\\modules.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -11498,6 +11585,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\scripts\\utils\\__tests__\\create-symlinks.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -11913,6 +12001,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\scripts\\utils\\__tests__\\entry-points.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -11971,6 +12060,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\scripts\\utils\\__tests__\\read-configuration.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -12069,6 +12159,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\scripts\\utils\\__tests__\\ts-node-ignore.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -12131,6 +12222,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\server\\middlewares\\__tests__\\error-handling.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -12155,6 +12247,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\server\\middlewares\\__tests__\\scripts-stats.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -12275,6 +12368,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\server\\middlewares\\__tests__\\server-side-rendering.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -12348,6 +12442,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\server\\middlewares\\__tests__\\settings-and-store.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -12391,6 +12486,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\server\\utils\\__tests__\\custom-chunk-extractor.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -12553,6 +12649,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\server\\utils\\__tests__\\initial-state.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -12744,6 +12841,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\server\\utils\\__tests__\\stats.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -12776,6 +12874,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\utils\\__tests__\\get-variable.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -12924,6 +13023,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\utils\\__tests__\\merge-packages.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -12956,6 +13056,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\core\\src\\utils\\__tests__\\snake-to-camel.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -13020,6 +13121,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\error\\__tests__\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -13087,6 +13189,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\file-settings\\src\\__tests__\\getAllSites.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -13182,6 +13285,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\file-settings\\src\\__tests__\\getSettings.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -13213,6 +13317,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\file-settings\\src\\__tests__\\normalizeSettings.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -13258,6 +13363,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\file-settings\\src\\__tests__\\validateSettings.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -13440,6 +13546,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\cli-e2e\\docker\\create.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -13497,6 +13604,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\cli-e2e\\filesystem\\create.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -13568,6 +13676,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\cli\\__tests__\\build.ci.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -13646,6 +13755,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\cli\\__tests__\\create-package.cli.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -13874,6 +13984,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\cli\\__tests__\\create.cli.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -13964,6 +14075,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\cli\\__tests__\\dev.ci.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -14029,6 +14141,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\cli\\__tests__\\serve.ci.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -14060,6 +14173,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\commands\\__tests__\\build.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -14131,6 +14245,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\commands\\__tests__\\create-package.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -14440,6 +14555,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\commands\\__tests__\\create.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -14471,6 +14587,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\commands\\__tests__\\dev.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -14502,6 +14619,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\commands\\__tests__\\serve.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -14898,6 +15016,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\steps\\__tests__\\steps.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -14968,6 +15087,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\utils\\decode\\__tests__\\decode.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -15166,6 +15286,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\utils\\slot-and-fill\\__tests__\\slot.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -15626,6 +15747,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\utils\\slot-and-fill\\__tests__\\use-fills.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -15667,6 +15789,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\utils\\__tests__\\is-derived.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -15690,6 +15813,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\utils\\__tests__\\url.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -15826,6 +15950,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\frontity\\src\\utils\\__tests__\\utils.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -15894,6 +16019,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\google-ad-manager\\src\\components\\__tests__\\google-publisher-tag.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -16230,6 +16356,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\google-analytics\\src\\components\\__tests__\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -16582,6 +16709,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\google-tag-manager-analytics\\src\\components\\__tests__\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -17930,6 +18058,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\head-tags\\src\\__tests__\\state.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(32)
     });
@@ -17968,6 +18097,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\hooks\\use-archive-infinite-scroll\\__tests__\\types.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -18765,6 +18895,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\hooks\\use-archive-infinite-scroll\\__tests__\\use-archive-infinite-scroll.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(23)
     });
@@ -18825,6 +18956,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\hooks\\use-in-view\\__tests__\\use-in-view.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -18863,6 +18995,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\hooks\\use-infinite-scroll\\__tests__\\types.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -19384,6 +19517,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\hooks\\use-infinite-scroll\\__tests__\\use-infinite-scroll.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -19424,6 +19558,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\hooks\\use-post-type-infinite-scroll\\__tests__\\types.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -21112,6 +21247,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\hooks\\use-post-type-infinite-scroll\\__tests__\\use-post-type-infinite-scroll.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(45)
     });
@@ -21425,6 +21561,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\hooks\\use-post-type-infinite-scroll\\__tests__\\utils.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -21463,6 +21600,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\html2react\\processors\\__tests__\\iframe.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -21501,6 +21639,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\html2react\\processors\\__tests__\\image.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -21539,6 +21678,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\html2react\\processors\\__tests__\\link.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -21606,6 +21746,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\html2react\\processors\\__tests__\\script.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -21657,6 +21798,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\html2react\\processors\\__tests__\\slot-block.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -21839,6 +21981,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\html2react\\src\\libraries\\__tests__\\component.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -21906,6 +22049,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\html2react\\src\\libraries\\__tests__\\parse.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -22062,6 +22206,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\html2react\\__tests__\\types.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -22096,6 +22241,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\router\\__tests__\\types.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -22145,6 +22291,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\smart-adserver\\src\\components\\__tests__\\smart-ad.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -22903,6 +23050,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\source\\src\\__tests__\\data.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -23015,6 +23163,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\source\\src\\__tests__\\entities.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -23081,6 +23230,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\source\\types\\__tests__\\data.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -23113,6 +23263,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\source\\types\\__tests__\\entity.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -23261,6 +23412,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\source\\types\\__tests__\\source.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -23736,6 +23888,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\tiny-router\\src\\__tests__\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(22)
     });
@@ -23902,6 +24055,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\types\\__tests__\\action.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -23939,6 +24093,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\types\\__tests__\\config.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -24078,6 +24233,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\types\\__tests__\\connect.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -24148,6 +24304,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\types\\__tests__\\derived.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -24269,6 +24426,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\types\\__tests__\\merge-packages.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -24412,6 +24570,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\types\\__tests__\\package.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -24581,6 +24740,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\types\\__tests__\\server.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -24665,6 +24825,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\types\\__tests__\\settings.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -24722,6 +24883,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\types\\__tests__\\state.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -25496,6 +25658,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-comments\\src\\__tests__\\actions.submit.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -25678,6 +25841,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-comments\\src\\__tests__\\actions.updateFields.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -25823,6 +25987,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-comments\\src\\__tests__\\commentsHandler.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -25965,6 +26130,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-comments\\src\\__tests__\\insertComment.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -25993,6 +26159,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\handlers\\utils\\__tests__\\capitalize.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -26037,6 +26204,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\handlers\\utils\\__tests__\\validateDate.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -26268,6 +26436,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\handlers\\__tests__\\author.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -26490,6 +26659,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\handlers\\__tests__\\category.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -26693,6 +26863,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\handlers\\__tests__\\date.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -26843,6 +27014,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\handlers\\__tests__\\post-archive.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -27118,6 +27290,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\handlers\\__tests__\\post-type-with-query.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -27649,6 +27822,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\handlers\\__tests__\\post-type.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(30)
     });
@@ -27852,6 +28026,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\handlers\\__tests__\\tag.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -27933,6 +28108,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\schemas\\__tests__\\entity.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -27987,6 +28163,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\schemas\\__tests__\\list.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -28139,6 +28316,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\api.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -28230,6 +28408,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\auth-header.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -28435,6 +28614,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\get-match.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -28560,6 +28740,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\handlers.com.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -28627,6 +28808,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\handlers.custom.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -28804,6 +28986,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\handlers.org.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -28958,6 +29141,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\populate.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -29029,6 +29213,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\redirections.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -29048,6 +29233,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\response-utils.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -29406,6 +29592,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\route-utils.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(42)
     });
@@ -30208,6 +30395,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\libraries\\__tests__\\transform-link.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(52)
     });
@@ -31004,6 +31192,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\__tests__\\3xx-redirections.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -31558,6 +31747,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\__tests__\\actions.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -31686,6 +31876,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\__tests__\\internal-redirections-handlers.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32344,6 +32535,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\wp-source\\src\\__tests__\\state.tests.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(32)
     });
@@ -32637,6 +32829,7 @@ describe('frontity_frontity', () => {
 
 		const tests = extractFromSource(sourceCode, 'frontity_frontity\\packages\\yoast\\src\\__tests__\\yoast.tests.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });

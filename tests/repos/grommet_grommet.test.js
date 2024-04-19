@@ -16,6 +16,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\e2e\\tests\\heading-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -416,6 +417,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Accordion\\__tests__\\Accordion-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -648,6 +650,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Anchor\\__tests__\\Anchor-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -801,6 +804,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Avatar\\__tests__\\Avatar-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -1473,6 +1477,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Box\\__tests__\\Box-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(30)
     });
@@ -2117,6 +2122,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Button\\__tests__\\Button-kind-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(31)
     });
@@ -2708,6 +2714,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Button\\__tests__\\Button-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(34)
     });
@@ -3366,6 +3373,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Calendar\\__tests__\\Calendar-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(32)
     });
@@ -3493,6 +3501,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Card\\__tests__\\Card-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -3774,6 +3783,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Carousel\\__tests__\\Carousel-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -4127,6 +4137,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Chart\\__tests__\\Chart-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -4226,6 +4237,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Chart\\__tests__\\utils-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4437,6 +4449,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\CheckBox\\__tests__\\CheckBox-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -4656,6 +4669,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\CheckBoxGroup\\__tests__\\CheckBoxGroup-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -4800,6 +4814,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Clock\\__tests__\\Clock-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -4863,6 +4878,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Collapsible\\__tests__\\Collapsible-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -5326,6 +5342,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\DataChart\\__tests__\\DataChart-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -6825,6 +6842,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\DataTable\\__tests__\\DataTable-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(59)
     });
@@ -7852,6 +7870,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\DateInput\\__tests__\\DateInput-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(49)
     });
@@ -7968,6 +7987,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Diagram\\__tests__\\Diagram-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -8035,6 +8055,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Distribution\\__tests__\\Distribution-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -8361,6 +8382,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Drop\\__tests__\\Drop-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(26)
     });
@@ -8548,6 +8570,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\DropButton\\__tests__\\DropButton-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -8718,6 +8741,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\FileInput\\__tests__\\FileInput-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -8745,6 +8769,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Footer\\__tests__\\Footer-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -9688,6 +9713,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Form\\__tests__\\Form-test-controlled.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -11258,6 +11284,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Form\\__tests__\\Form-test-uncontrolled.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(39)
     });
@@ -11690,6 +11717,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\FormField\\__tests__\\FormField-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(24)
     });
@@ -12074,6 +12102,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Grid\\__tests__\\Grid-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(22)
     });
@@ -12207,6 +12236,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Grommet\\__tests__\\Grommet-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -12235,6 +12265,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Header\\__tests__\\Header-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -12500,6 +12531,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Heading\\__tests__\\Heading-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -12662,6 +12694,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Image\\__tests__\\Image-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -13123,6 +13156,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\InfiniteScroll\\__tests__\\InfiniteScroll-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -13211,6 +13245,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Keyboard\\__tests__\\Keyboard-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -13743,6 +13778,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Layer\\__tests__\\Layer-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(26)
     });
@@ -14523,6 +14559,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\List\\__tests__\\List-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(44)
     });
@@ -14555,6 +14592,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Main\\__tests__\\Main-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -14618,6 +14656,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Markdown\\__tests__\\Markdown-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -15162,6 +15201,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\MaskedInput\\__tests__\\MaskedInput-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(22)
     });
@@ -15787,6 +15827,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Menu\\__tests__\\Menu-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(24)
     });
@@ -15989,6 +16030,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Meter\\__tests__\\Meter-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -16248,6 +16290,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\NameValueList\\__tests__\\NameValueList-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -16355,6 +16398,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\NameValuePair\\__tests__\\NameValuePair-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -16387,6 +16431,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Nav\\__tests__\\Nav-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -16650,6 +16695,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Notification\\__tests__\\Notification-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -16750,6 +16796,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Page\\__tests__\\Page-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -16841,6 +16888,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\PageHeader\\__tests__\\PageHeader-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -17252,6 +17300,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Pagination\\__tests__\\Pagination-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(21)
     });
@@ -17332,6 +17381,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Paragraph\\__tests__\\Paragraph-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -17497,6 +17547,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\RadioButton\\__tests__\\RadioButton-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -17779,6 +17830,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\RadioButtonGroup\\__tests__\\RadioButtonGroup-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -17929,6 +17981,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\RangeInput\\__tests__\\RangeInput-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -18184,6 +18237,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\RangeSelector\\__tests__\\RangeSelector-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -18346,6 +18400,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\RoutedAnchor\\__tests__\\RoutedAnchor-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -18518,6 +18573,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\RoutedButton\\__tests__\\RoutedButton-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -19889,6 +19945,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Select\\__tests__\\Select-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(51)
     });
@@ -20437,6 +20494,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Select\\__tests__\\SelectMultiple-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -20516,6 +20574,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Sidebar\\__tests__\\Sidebar-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -20600,6 +20659,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\SkipLinks\\__tests__\\SkipLink-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -20789,6 +20849,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Spinner\\__tests__\\Spinner-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -20873,6 +20934,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Stack\\__tests__\\Stack-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -21115,6 +21177,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Table\\__tests__\\Table-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -21463,6 +21526,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Tabs\\__tests__\\Tabs-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -21565,6 +21629,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Tag\\__tests__\\Tag-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -21752,6 +21817,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Text\\__tests__\\Text-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -22006,6 +22072,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\TextArea\\__tests__\\TextArea-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -22695,6 +22762,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\TextInput\\__tests__\\TextInput-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(31)
     });
@@ -22904,6 +22972,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Tip\\__tests__\\Tip-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -23118,6 +23187,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\Video\\__tests__\\Video-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -23369,6 +23439,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\WorldMap\\__tests__\\WorldMap-test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -23383,6 +23454,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\__tests__\\components-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -23461,6 +23533,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\components\\__tests__\\FocusedContainer-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -23543,6 +23616,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\contexts\\ResponsiveContext\\__tests__\\ResponsiveContext-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -23743,6 +23817,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\themes\\__tests__\\theme-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -23842,6 +23917,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\utils\\__tests__\\colors-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -23886,6 +23962,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\utils\\__tests__\\mixins-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -23954,6 +24031,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\utils\\__tests__\\object-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -24019,6 +24097,7 @@ describe('grommet_grommet', () => {
 
 		const tests = extractFromSource(sourceCode, 'grommet_grommet\\src\\js\\__tests__\\default-props-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });

@@ -83,6 +83,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\chain\\context-handler-impl.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -311,6 +312,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\chain\\context-runner-impl.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -698,6 +700,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\chain\\sanitizers-impl.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -1146,6 +1149,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\chain\\validators-impl.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(26)
     });
@@ -1219,6 +1223,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\context-builder.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -1252,6 +1257,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\context-items\\bail.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1305,6 +1311,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\context-items\\chain-condition.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -1378,6 +1385,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\context-items\\custom-condition.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -1545,6 +1553,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\context-items\\custom-validation.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -1638,6 +1647,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\context-items\\sanitization.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -1732,6 +1742,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\context-items\\standard-validation.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -2119,6 +2130,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\context.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -2295,6 +2307,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\express-validator.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -2819,6 +2832,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\field-selection.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(34)
     });
@@ -2943,6 +2957,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\matched-data.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -3018,6 +3033,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\middlewares\\check.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -3116,6 +3132,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\middlewares\\exact.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -3399,6 +3416,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\middlewares\\one-of.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -3849,6 +3867,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\middlewares\\schema.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -3975,6 +3994,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\middlewares\\validation-chain-builders.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -4113,6 +4133,7 @@ describe('express-validator_express-validator', () => {
 
 		const tests = extractFromSource(sourceCode, 'express-validator_express-validator\\src\\validation-result.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });

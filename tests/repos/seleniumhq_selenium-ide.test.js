@@ -226,6 +226,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\browser-info\\__tests__\\chrome.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -259,6 +260,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\browser-info\\__tests__\\index.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -330,6 +332,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\browser-info\\__tests__\\sh.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -1234,6 +1237,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-csharp-commons\\__test__\\src\\command.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(101)
     });
@@ -1339,6 +1343,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-csharp-commons\\__test__\\src\\location.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -1407,6 +1412,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-csharp-commons\\__test__\\src\\selection.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -2311,6 +2317,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-csharp-nunit\\__test__\\src\\command.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(101)
     });
@@ -2472,6 +2479,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-csharp-nunit\\__test__\\src\\index.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -2780,6 +2788,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-csharp-xunit\\__test__\\src\\command.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(31)
     });
@@ -2941,6 +2950,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-csharp-xunit\\__test__\\src\\index.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -3845,6 +3855,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-java-junit\\__test__\\src\\command.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(100)
     });
@@ -4006,6 +4017,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-java-junit\\__test__\\src\\index.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -4111,6 +4123,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-java-junit\\__test__\\src\\location.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -4179,6 +4192,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-java-junit\\__test__\\src\\selection.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -5080,6 +5094,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-javascript-mocha\\__test__\\src\\command.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(102)
     });
@@ -5241,6 +5256,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-javascript-mocha\\__test__\\src\\index.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -5346,6 +5362,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-javascript-mocha\\__test__\\src\\location.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -5414,6 +5431,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-javascript-mocha\\__test__\\src\\selection.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6318,6 +6336,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-python-pytest\\__test__\\src\\command.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(102)
     });
@@ -6479,6 +6498,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-python-pytest\\__test__\\src\\index.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -6584,6 +6604,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-python-pytest\\__test__\\src\\location.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -6659,6 +6680,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-python-pytest\\__test__\\src\\selection.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -7566,6 +7588,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-ruby-rspec\\__test__\\src\\command.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(102)
     });
@@ -7727,6 +7750,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-ruby-rspec\\__test__\\src\\index.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -7816,6 +7840,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-ruby-rspec\\__test__\\src\\location.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -7876,6 +7901,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\code-export-ruby-rspec\\__test__\\src\\selection.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -8018,6 +8044,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\get-driver\\__tests__\\download-driver.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -8053,6 +8080,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\get-driver\\__tests__\\index.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -8159,6 +8187,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\get-driver\\__tests__\\resolve-driver.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -8330,6 +8359,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\code-export\\emit.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -8419,6 +8449,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\code-export\\find.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -8518,6 +8549,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\code-export\\hook.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -8557,6 +8589,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\code-export\\parsers.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -8693,6 +8726,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\code-export\\preprocessor.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -8836,6 +8870,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\code-export\\prettify.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -8887,6 +8922,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\code-export\\register.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -8985,6 +9021,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\code-export\\render.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -9059,6 +9096,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\project\\index.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -9100,6 +9138,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-code-export\\__test__\\src\\string-escape\\index.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -9460,6 +9499,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\legacy\\migrate.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -9498,6 +9538,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrate.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -9654,6 +9695,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\implicit-locators.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -9728,6 +9770,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\pause.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -9912,6 +9955,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\prompt.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10036,6 +10080,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\script-interpolation.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10148,6 +10193,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\select-window.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10222,6 +10268,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\store-element-count.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10304,6 +10351,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\target-fallback.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10378,6 +10426,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\title.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10452,6 +10501,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\variable-name.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10536,6 +10586,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-migrate\\__tests__\\migrations\\wait-for-commands.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10693,6 +10744,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-model\\__tests__\\args\\arg-type.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -10842,6 +10894,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-model\\__tests__\\args\\argument.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -10877,6 +10930,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-model\\__tests__\\args\\index.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -10915,6 +10969,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-model\\__tests__\\args\\text.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -11022,6 +11077,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-model\\__tests__\\args\\variable.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -11083,6 +11139,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-model\\__tests__\\commands\\command.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -11130,6 +11187,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-model\\__tests__\\commands\\store.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -11164,6 +11222,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-model\\__tests__\\index.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11310,6 +11369,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runner\\src\\__tests__\\capabilities.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -11345,6 +11405,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runner\\src\\__tests__\\config.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11492,6 +11553,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runner\\src\\__tests__\\proxy.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -11545,6 +11607,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runner\\src\\__tests__\\versioner.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -11613,6 +11676,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\callstack.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -11862,6 +11926,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\integration\\playback-webdriver.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -12150,6 +12215,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\integration\\recording-syncronizer-webdriver.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -12227,6 +12293,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\playback-tree\\command-leveler.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -12440,6 +12507,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\playback-tree\\command-node.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -12928,6 +12996,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\playback-tree\\playback-tree.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -13160,6 +13229,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\playback-tree\\syntax-validation.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(24)
     });
@@ -15231,6 +15301,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\playback.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(54)
     });
@@ -15406,6 +15477,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\preprocessors.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -15466,6 +15538,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\utils.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -16129,6 +16202,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\side-runtime\\__tests__\\webdriver.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(50)
     });
@@ -16170,6 +16244,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\webdriver-testkit\\__tests__\\driver.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -16206,6 +16281,7 @@ describe('seleniumhq_selenium-ide', () => {
 
 		const tests = extractFromSource(sourceCode, 'seleniumhq_selenium-ide\\packages\\webdriver-testkit\\__tests__\\index.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });

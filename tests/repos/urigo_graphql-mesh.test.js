@@ -46,6 +46,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\federation-example\\tests\\federation-example.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -95,6 +96,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\graphql-file-upload-example\\test\\graphql-file-upload-example.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -155,6 +157,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\grpc-example\\tests\\grpc.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -196,6 +199,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\hello-world\\tests\\hello-world.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -240,6 +244,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\json-schema-example\\tests\\artifacts.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -285,6 +290,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\json-schema-example\\tests\\json-schema-example.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -315,6 +321,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\mongoose-example\\tests\\mongoose-example.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -355,6 +362,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\mysql-employees\\tests\\mysql-employees.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -397,6 +405,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\mysql-rfam\\tests\\mysql-rfam.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -435,6 +444,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\neo4j-example\\tests\\neo4j-example.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -475,6 +485,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\odata-trippin\\tests\\odata-trippin.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -526,6 +537,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\openapi-javascript-wiki\\tests\\javascript-wiki.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -571,6 +583,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\openapi-location-weather\\tests\\location-weather.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -602,6 +615,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\postgres-geodb\\test\\test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -646,6 +660,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\soap-demo\\tests\\soap-demo.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -686,6 +701,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\sqlite-chinook\\tests\\sqlite-chinook.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -740,6 +756,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\thrift-calculator\\tests\\thrift-calculator.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -779,6 +796,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\examples\\type-merging-batching-example\\tests\\type-merging-batching-example.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -845,6 +863,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\apollo-link\\test\\apollo-link.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -857,6 +876,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\cache\\file\\test\\cache.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -869,6 +889,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\cache\\localforage\\test\\cache.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -935,6 +956,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\cache\\redis\\test\\cache.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -947,6 +969,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\cli\\test\\cli.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1065,6 +1088,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\graphql\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -1170,6 +1194,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\grpc\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1214,6 +1239,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\grpc\\test\\scalars.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -1287,6 +1313,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\grpc\\test\\utils.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -1299,6 +1326,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\mongoose\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1311,6 +1339,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\mysql\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1323,6 +1352,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\neo4j\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -2025,6 +2055,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\odata\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -2569,6 +2600,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\authentication.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -2614,6 +2646,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\cloudfunction.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -2647,6 +2680,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\docusign.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -5104,6 +5138,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\example_api.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(60)
     });
@@ -5203,6 +5238,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\example_api2.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -5652,6 +5688,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\example_api3.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -6376,6 +6413,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\example_api4.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -6581,6 +6619,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\example_api5.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6853,6 +6892,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\example_api6.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -6942,6 +6982,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\example_api_combined.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -7016,6 +7057,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\government_social_work.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -7129,6 +7171,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -7176,6 +7219,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\ibm_language_translator.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7222,6 +7266,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\instagram.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7339,6 +7384,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\json-like-body.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7525,6 +7571,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\oas_3_tools.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -7572,6 +7619,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\stripe.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7617,6 +7665,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\openapi\\test\\weather_underground.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7629,6 +7678,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\postgraphile\\test\\cli.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7641,6 +7691,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\soap\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7680,6 +7731,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\thrift\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7692,6 +7744,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\handlers\\tuql\\test\\handler.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -7740,6 +7793,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\json-machete\\tests\\compareJSONSchemas.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -8001,6 +8055,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\json-machete\\tests\\dereferenceObject.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -8072,6 +8127,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\json-machete\\tests\\healJSONSchema.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -8193,6 +8249,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\json-machete\\tests\\referenceJSONSchema.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -9288,6 +9345,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\loaders\\json-schema\\test\\getComposerFromSchema.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(42)
     });
@@ -9440,6 +9498,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\loaders\\openapi\\tests\\authentication.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -9482,6 +9541,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\loaders\\openapi\\tests\\cloudfunction.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -9509,6 +9569,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\loaders\\openapi\\tests\\docusign.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -10049,6 +10110,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\loaders\\openapi\\tests\\example_api.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -10100,6 +10162,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\loaders\\openapi\\tests\\example_api_combined.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10153,6 +10216,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\loaders\\openapi\\tests\\multiple-responses-swagger.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -10449,6 +10513,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\plugins\\rate-limit\\tests\\rate-limit.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -10461,6 +10526,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\runtime\\test\\runtime.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -10551,6 +10617,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\store\\test\\mesh-store.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -11266,6 +11333,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\cache\\test\\cache.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -11474,6 +11542,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\encapsulate\\test\\encapsulate.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -11486,6 +11555,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\extend\\test\\extend.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11498,6 +11568,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\federation\\test\\federation.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -12456,6 +12527,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\filter-schema\\test\\transform.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -12680,6 +12752,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\hoist-field\\test\\transform.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -13029,6 +13102,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\mock\\test\\mocking.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -13266,6 +13340,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\naming-convention\\test\\naming-convention.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -13503,6 +13578,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\prefix\\test\\barePrefix.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -13757,6 +13833,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\prefix\\test\\wrapPrefix.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -14048,6 +14125,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\rate-limit\\tests\\rate-limit.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -14613,6 +14691,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\rename\\test\\bareRename.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -15382,6 +15461,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\rename\\test\\wrapRename.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -16339,6 +16419,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\replace-field\\test\\replace-field.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -16434,6 +16515,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\resolvers-composition\\test\\transform.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -16693,6 +16775,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\transforms\\snapshot\\test\\snapshot.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -16761,6 +16844,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\urql\\test\\urql-exchange.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -16795,6 +16879,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\utils\\test\\pubsub.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -16842,6 +16927,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\utils\\test\\read-file-or-url.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -16882,6 +16968,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\packages\\utils\\test\\with-filter.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -16980,6 +17067,7 @@ describe('urigo_graphql-mesh', () => {
 
 		const tests = extractFromSource(sourceCode, 'urigo_graphql-mesh\\website\\src\\pages\\api\\covid\\json-schema-covid\\tests\\json-schema-covid.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });

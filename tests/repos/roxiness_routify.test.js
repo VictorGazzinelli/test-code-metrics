@@ -25,8 +25,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\examples\\starter-vitest\\test\\dom.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
+		expect(assertions).toBe(2)
     });
     it('roxiness_routify\\examples\\typescript-tailwind-playwright\\tests\\home.spec.ts', () => {
         const sourceCode = `
@@ -41,8 +43,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\examples\\typescript-tailwind-playwright\\tests\\home.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
+		expect(assertions).toBe(1)
     });
     it('roxiness_routify\\lib\\buildtime\\plugins\\metaFromFile\\spec\\metaFromFile\\metaFromFile.spec.js', () => {
         const sourceCode = `
@@ -123,8 +127,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\buildtime\\plugins\\metaFromFile\\spec\\metaFromFile\\metaFromFile.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
+		expect(assertions).toBe(4)
     });
     it('roxiness_routify\\lib\\buildtime\\plugins\\namedModule\\spec\\namedModule.test.js', () => {
         const sourceCode = `
@@ -152,8 +158,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\buildtime\\plugins\\namedModule\\spec\\namedModule.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
+		expect(assertions).toBe(2)
     });
     it('roxiness_routify\\lib\\common\\spec\\helpers.spec.js', () => {
         const sourceCode = `
@@ -192,8 +200,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\common\\spec\\helpers.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
+		expect(assertions).toBe(2)
     });
     it('roxiness_routify\\lib\\common\\spec\\RNode.spec.js', () => {
         const sourceCode = `
@@ -311,8 +321,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\common\\spec\\RNode.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
+		expect(assertions).toBe(9)
     });
     it('roxiness_routify\\lib\\common\\spec\\utils.spec.js', () => {
         const sourceCode = `
@@ -404,8 +416,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\common\\spec\\utils.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
+		expect(assertions).toBe(9)
     });
     it('roxiness_routify\\lib\\runtime\\Global\\spec\\BrowserAdapter.spec.js', () => {
         const sourceCode = `
@@ -449,8 +463,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\runtime\\Global\\spec\\BrowserAdapter.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
+		expect(assertions).toBe(5)
     });
     it('roxiness_routify\\lib\\runtime\\helpers\\spec\\helpers.spec.js', () => {
         const sourceCode = `
@@ -596,8 +612,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\runtime\\helpers\\spec\\helpers.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
+		expect(assertions).toBe(24)
     });
     it('roxiness_routify\\lib\\runtime\\Instance\\spec\\RNodeRuntime.spec.js', () => {
         const sourceCode = `
@@ -636,8 +654,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\runtime\\Instance\\spec\\RNodeRuntime.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
+		expect(assertions).toBe(5)
     });
     it('roxiness_routify\\lib\\runtime\\Instance\\spec\\UrlParamUtils.spec.js', () => {
         const sourceCode = `
@@ -704,8 +724,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\runtime\\Instance\\spec\\UrlParamUtils.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
+		expect(assertions).toBe(8)
     });
     it('roxiness_routify\\lib\\runtime\\plugins\\reset\\spec\\reset.test.js', () => {
         const sourceCode = `
@@ -803,8 +825,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\runtime\\plugins\\reset\\spec\\reset.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
+		expect(assertions).toBe(5)
     });
     it('roxiness_routify\\lib\\runtime\\Route\\spec\\Route.spec.js', () => {
         const sourceCode = `
@@ -898,8 +922,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\runtime\\Route\\spec\\Route.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
+		expect(assertions).toBe(4)
     });
     it('roxiness_routify\\lib\\runtime\\Route\\spec\\utils.spec.js', () => {
         const sourceCode = `
@@ -984,8 +1010,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\runtime\\Route\\spec\\utils.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
+		expect(assertions).toBe(7)
     });
     it('roxiness_routify\\lib\\runtime\\Router\\utils\\index.spec.js', () => {
         const sourceCode = `
@@ -1035,8 +1063,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\runtime\\Router\\utils\\index.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
+		expect(assertions).toBe(3)
     });
     it('roxiness_routify\\lib\\runtime\\utils\\spec\\utils.spec.js', () => {
         const sourceCode = `
@@ -1118,8 +1148,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\lib\\runtime\\utils\\spec\\utils.spec.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
+		expect(assertions).toBe(10)
     });
     it('roxiness_routify\\test\\e2e\\an-app\\app.test.js', () => {
         const sourceCode = `
@@ -1140,8 +1172,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\e2e\\an-app\\app.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
+		expect(assertions).toBe(1)
     });
     it('roxiness_routify\\test\\examples\\buildtime-data.test.js', () => {
         const sourceCode = `
@@ -1164,8 +1198,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\examples\\buildtime-data.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
+		expect(assertions).toBe(2)
     });
     it('roxiness_routify\\test\\examples\\starter.test.js', () => {
         const sourceCode = `
@@ -1184,8 +1220,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\examples\\starter.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
+		expect(assertions).toBe(1)
     });
     it('roxiness_routify\\test\\examples\\sveltekit.test.js', () => {
         const sourceCode = `
@@ -1205,8 +1243,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\examples\\sveltekit.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
+		expect(assertions).toBe(1)
     });
     it('roxiness_routify\\test\\integration\\meta\\meta.test.js', () => {
         const sourceCode = `
@@ -1270,8 +1310,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\integration\\meta\\meta.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
+		expect(assertions).toBe(11)
     });
     it('roxiness_routify\\test\\integration\\routify\\routify.test.js', () => {
         const sourceCode = `
@@ -1361,8 +1403,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\integration\\routify\\routify.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
+		expect(assertions).toBe(8)
     });
     it('roxiness_routify\\test\\integration\\routify-runtime\\routify.test.js', () => {
         const sourceCode = `
@@ -1383,8 +1427,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\integration\\routify-runtime\\routify.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
+		expect(assertions).toBe(2)
     });
     it('roxiness_routify\\test\\integration\\watcher\\watcher.test.js', () => {
         const sourceCode = `
@@ -1450,8 +1496,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\integration\\watcher\\watcher.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
+		expect(assertions).toBe(6)
     });
     it('roxiness_routify\\test\\unit\\bundler\\bundler.test.js', () => {
         const sourceCode = `
@@ -1506,8 +1554,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\unit\\bundler\\bundler.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
+		expect(assertions).toBe(2)
     });
     it('roxiness_routify\\test\\unit\\exporter\\exporter.test.js', () => {
         const sourceCode = `
@@ -1542,8 +1592,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\unit\\exporter\\exporter.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
+		expect(assertions).toBe(2)
     });
     it('roxiness_routify\\test\\unit\\filemapper\\filemapper.test.js', () => {
         const sourceCode = `
@@ -1598,8 +1650,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\unit\\filemapper\\filemapper.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
+		expect(assertions).toBe(6)
     });
     it('roxiness_routify\\test\\unit\\importer\\importer.test.js', () => {
         const sourceCode = `
@@ -1660,8 +1714,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\unit\\importer\\importer.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
+		expect(assertions).toBe(8)
     });
     it('roxiness_routify\\test\\unit\\instance\\instance.test.js', () => {
         const sourceCode = `
@@ -1707,8 +1763,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\unit\\instance\\instance.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
+		expect(assertions).toBe(4)
     });
     it('roxiness_routify\\test\\unit\\node\\node.test.js', () => {
         const sourceCode = `
@@ -1735,8 +1793,10 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\unit\\node\\node.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
+		expect(assertions).toBe(3)
     });
     it('roxiness_routify\\test\\unit\\routify\\plugins.test.js', () => {
         const sourceCode = `
@@ -1785,6 +1845,7 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\unit\\routify\\plugins.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1840,7 +1901,9 @@ describe('roxiness_routify', () => {
 
 		const tests = extractFromSource(sourceCode, 'roxiness_routify\\test\\unit\\routify\\sortPlugins.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
+		expect(assertions).toBe(3)
     });
 });

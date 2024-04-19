@@ -628,6 +628,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\createReactClassIntegration-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(26)
     });
@@ -886,6 +887,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\forwardRef-test.internal.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -958,6 +960,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\onlyChild-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -2297,6 +2300,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactChildren-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(45)
     });
@@ -2701,6 +2705,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactContextValidator-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -3190,6 +3195,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactElement-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(28)
     });
@@ -3551,6 +3557,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactElementClone-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(21)
     });
@@ -3997,6 +4004,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactElementValidator-test.internal.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(24)
     });
@@ -4560,6 +4568,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactES6Class-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(56)
     });
@@ -4761,6 +4770,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactJSXElement-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -5159,6 +5169,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactJSXElementValidator-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(22)
     });
@@ -5217,6 +5228,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactProxy-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -5335,6 +5347,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\core\\__tests__\\ReactPureComponent-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -5440,6 +5453,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\findDOMNode-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -6143,6 +6157,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactComponent-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(23)
     });
@@ -7314,6 +7329,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactComponentLifeCycle-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(28)
     });
@@ -9100,6 +9116,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactCompositeComponent-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(50)
     });
@@ -9220,6 +9237,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactCompositeComponentNestedState-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -9660,6 +9678,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactCompositeComponentState-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -9894,6 +9913,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactDOMComponentTree-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -10342,6 +10362,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactDOMEventListener-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -11496,6 +11517,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactDOMFiber-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(38)
     });
@@ -13185,6 +13207,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactDOMInput-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(94)
     });
@@ -13290,6 +13313,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactDOMOption-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -14008,6 +14032,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactDOMSelect-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(29)
     });
@@ -14237,6 +14262,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactDOMSVG-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -14633,6 +14659,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactDOMTextarea-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(28)
     });
@@ -14932,6 +14959,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactDOMTextComponent-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -15222,6 +15250,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactEmptyComponent-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -17369,6 +17398,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactErrorBoundaries-test.internal.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(41)
     });
@@ -17463,6 +17493,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactHook-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -17725,6 +17756,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactIdentity-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -18288,6 +18320,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactMount-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -18367,6 +18400,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactMountDestruction-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -18764,6 +18798,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactMultiChild-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -19622,6 +19657,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactMultiChildReconcile-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(28)
     });
@@ -20035,6 +20071,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactStatelessComponent-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -20486,6 +20523,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactTestUtils-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -21859,6 +21897,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\ReactUpdates-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(33)
     });
@@ -22028,6 +22067,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\refs-destruction-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -22400,6 +22440,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\refs-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -22722,6 +22763,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\dom\\__tests__\\renderSubtreeIntoContainer-test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -23048,6 +23090,7 @@ describe('rubylouvre_anu', () => {
 
 		const tests = extractFromSource(sourceCode, 'rubylouvre_anu\\packages\\render\\server\\__tests2__\\utils\\ReactDOMServerIntegrationTestUtils.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });

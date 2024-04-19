@@ -34,6 +34,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\controller.server.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1497,6 +1498,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\controller.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(37)
     });
@@ -1821,6 +1823,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\form.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -1852,6 +1855,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\isPlainObject.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1947,6 +1951,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\appendErrors.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -2043,6 +2048,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\focusFieldBy.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -2065,6 +2071,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\generateId.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -2293,6 +2300,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getCheckboxValue.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -2646,6 +2654,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getDirtyFields.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -2676,6 +2685,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getEventValue.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -2782,6 +2792,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getFieldValue.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -2807,6 +2818,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getFieldValueAs.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -2830,6 +2842,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getFocusFieldName.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -2856,6 +2869,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getNodeParentName.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -2923,6 +2937,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getRadioValue.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -2990,6 +3005,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getResolverOptions.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -3021,6 +3037,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getRuleValue.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -3075,6 +3092,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getValidateError.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -3097,6 +3115,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\getValueAndMessage.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -3123,6 +3142,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\isNameInFieldArray.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -3257,6 +3277,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\isWatched.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -3501,6 +3522,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\schemaErrorLookup.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -3527,6 +3549,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\shouldSubscribeByName.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -3731,6 +3754,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\skipValidation.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -6075,6 +6099,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\logic\\validateField.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -6588,6 +6613,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\type.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -7363,6 +7389,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useController.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -7950,6 +7977,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray\\append.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -8178,6 +8206,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray\\focus.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -9015,6 +9044,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray\\insert.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -9481,6 +9511,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray\\move.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -10099,6 +10130,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray\\prepend.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -11331,6 +11363,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray\\remove.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(21)
     });
@@ -11661,6 +11694,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray\\replace.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -12148,6 +12182,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray\\swap.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -12851,6 +12886,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray\\update.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -16968,6 +17004,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFieldArray.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(54)
     });
@@ -17257,6 +17294,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\clearErrors.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -18180,6 +18218,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\formState.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(24)
     });
@@ -18905,6 +18944,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\getFieldState.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(21)
     });
@@ -19254,6 +19294,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\getValues.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -19790,6 +19831,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\handleSubmit.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -21768,6 +21810,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\register.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(43)
     });
@@ -23287,6 +23330,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\reset.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(32)
     });
@@ -23708,6 +23752,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\resetField.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -23864,6 +23909,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\resolver.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -24040,6 +24086,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\setError.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -25437,6 +25484,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\setValue.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(36)
     });
@@ -26382,6 +26430,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\trigger.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(23)
     });
@@ -26446,6 +26495,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\unregister.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -27004,6 +27054,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm\\watch.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -27118,6 +27169,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm.server.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -29168,6 +29220,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useForm.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(52)
     });
@@ -29234,6 +29287,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFormContext.server.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -29475,6 +29529,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFormContext.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -30305,6 +30360,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useFormState.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -31885,6 +31941,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\useWatch.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(39)
     });
@@ -32030,6 +32087,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\cloneObject.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -32050,6 +32108,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\compact.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -32131,6 +32190,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\createSubject.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -32238,6 +32298,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\deepEqual.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -32324,6 +32385,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\deepMerge.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -32366,6 +32428,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\fillBooleanArray.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -32393,6 +32456,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\fillEmptyArray.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32442,6 +32506,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\get.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -32521,6 +32586,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\insert.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -32550,6 +32616,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isBoolean.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32566,6 +32633,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isCheckBoxInput.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -32595,6 +32663,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isEmptyObject.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32611,6 +32680,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isFileInput.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -32643,6 +32713,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isFunction.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32669,6 +32740,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isHTMLElement.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32693,6 +32765,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isKey.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32719,6 +32792,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isMessage.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32737,6 +32811,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isMultipleSelect.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -32763,6 +32838,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isNullOrUndefined.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32793,6 +32869,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isObject.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32837,6 +32914,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isPrimitive.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -32853,6 +32931,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isRadioInput.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -32876,6 +32955,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isRadioOrCheckbox.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32892,6 +32972,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isRegex.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -32908,6 +32989,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isSelectInput.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -32937,6 +33019,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isString.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -32962,6 +33045,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\isUndefined.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -33030,6 +33114,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\move.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -33057,6 +33142,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\objectHasFunction.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -33134,6 +33220,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\prepend.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -33283,6 +33370,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\remove.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -33352,6 +33440,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\set.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -33398,6 +33487,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\stringToPath.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -33462,6 +33552,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\swap.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -33806,6 +33897,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\unset.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -33869,6 +33961,7 @@ describe('react-hook-form_react-hook-form', () => {
 
 		const tests = extractFromSource(sourceCode, 'react-hook-form_react-hook-form\\src\\__tests__\\utils\\validationModeChecker.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });

@@ -191,6 +191,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\commands.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -653,6 +654,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\model.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -841,6 +843,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\plugin.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -1260,6 +1263,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\BranchMenu.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -1416,6 +1420,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\CommitBox.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -1481,6 +1486,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\CommitMessage.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -1549,6 +1555,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\DiffModel.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1594,6 +1601,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\FileItem.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1929,6 +1937,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\GitPanel.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -2035,6 +2044,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\HistorySideBar.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -2237,6 +2247,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\ManageRemoteDialogue.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -2350,6 +2361,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\NotebookDiff.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -2457,6 +2469,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\PastCommitNode.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -2553,6 +2566,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\PlainTextDiff.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -2907,6 +2921,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\tests\\test-components\\Toolbar.spec.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(21)
     });
@@ -2984,6 +2999,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\ui-tests\\tests\\commit-diff.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -3093,6 +3109,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\ui-tests\\tests\\file-selection.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -3376,54 +3393,80 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\ui-tests\\tests\\git-stash.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
-    it('jupyterlab_jupyterlab-git\\ui-tests\\tests\\image-diff.spec.ts', () => {
-        const sourceCode = `
-			import \{ test \} from '@jupyterlab/galata';
-			import \{ expect \} from '@playwright/test';
-			import path from 'path';
-			import \{ extractFile \} from './utils';
+    // it('jupyterlab_jupyterlab-git\\ui-tests\\tests\\image-diff.spec.ts', () => {
+    //     const sourceCode = `
+	// 		import \{ test \} from '@jupyterlab/galata';
+	// 		import \{ expect \} from '@playwright/test';
+	// 		import path from 'path';
+	// 		import \{ extractFile \} from './utils';
 			
-			const baseRepositoryPath = 'test-repository.tar.gz';
-			test.use(\{ autoGoto: false \});
+	// 		const baseRepositoryPath = 'test-repository.tar.gz';
+	// 		test.use(\{ autoGoto: false \});
 			
-			test.describe('Image diff', () => \{
-			  test.beforeEach(async (\{ baseURL, page, tmpPath \}) => \{
-			    await extractFile(
-			      baseURL,
-			      path.resolve(__dirname, 'data', baseRepositoryPath),
-			      path.join(tmpPath, 'repository.tar.gz')
-			    );
+	// 		test.describe('Image diff', () => \{
+	// 		  test.beforeEach(async (\{ baseURL, page, tmpPath \}) => \{
+	// 		    await extractFile(
+	// 		      baseURL,
+	// 		      path.resolve(__dirname, 'data', baseRepositoryPath),
+	// 		      path.join(tmpPath, 'repository.tar.gz')
+	// 		    );
 			
-			    // URL for merge conflict example repository
-			    await page.goto(\`tree/\$\{tmpPath\}/repository\`);
-			  \});
+	// 		    // URL for merge conflict example repository
+	// 		    await page.goto(\`tree/\$\{tmpPath\}/repository\`);
+	// 		  \});
 			
-			  test('should display image diff from history', async (\{ page \}) => \{
-			    await page.sidebar.openTab('jp-git-sessions');
-			    await page.click('button:has-text("History")');
-			    const commits = page.getByTitle('View commit details');
+	// 		  test('should display image diff from history', async (\{ page \}) => \{
+	// 		    await page.sidebar.openTab('jp-git-sessions');
+	// 		    await page.click('button:has-text("History")');
+	// 		    const commits = page.getByTitle('View commit details');
 			
-			    await commits.first().click();
+	// 		    await commits.first().click();
 			    
-			    await page.getByTitle("git_workflow.jpg").getByRole("button", \{name: "View file changes"\}).click();
+	// 		    await page.getByTitle("git_workflow.jpg").getByRole("button", \{name: "View file changes"\}).click();
 			
-			    expect.soft(await page.locator('.jp-git-image-diff').screenshot()).toMatchSnapshot('jpeg_diff.png')
+	// 		    expect.soft(await page.locator('.jp-git-image-diff').screenshot()).toMatchSnapshot('jpeg_diff.png')
 			    
-			    await page.getByTitle("jupyter.png").getByRole("button", \{name: "View file changes"\}).click();
+	// 		    await page.getByTitle("jupyter.png").getByRole("button", \{name: "View file changes"\}).click();
 			
-			    expect(await page.locator('.jp-git-image-diff').last().screenshot()).toMatchSnapshot('png_diff.png')
-			  \});
-			\});
-			`
+	// 		    expect(await page.locator('.jp-git-image-diff').last().screenshot()).toMatchSnapshot('png_diff.png')
+	// 		  \});
+	// 		\});
+	// 		`
 
-		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\ui-tests\\tests\\image-diff.spec.ts')
-		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+	// 	const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\ui-tests\\tests\\image-diff.spec.ts')
+	// 	const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+	// 	const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
-		expect(tests.length).toBe(1)
-    });
+	// 	expect(tests.length).toBe(1)
+	// 	expect(snapshotAssertions).toBe(2)
+    // });
+	// it('jupyterlab_jupyterlab-git\\ui-tests\\tests\\image-diff.spec.ts 2', () => {
+    //     const sourceCode = `
+	// 		  test('should display image diff from history', async (\{ page \}) => \{
+	// 		    await page.sidebar.openTab('jp-git-sessions');
+	// 		    await page.click('button:has-text("History")');
+	// 		    const commits = page.getByTitle('View commit details');
+			
+	// 		    await commits.first().click();
+			    
+	// 		    await page.getByTitle("git_workflow.jpg").getByRole("button", \{name: "View file changes"\}).click();
+			
+	// 		    expect.soft(await page.locator('.jp-git-image-diff').screenshot()).toMatchSnapshot('jpeg_diff.png')
+			    
+	// 		  \});
+	// 		`
+
+	// 	const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\ui-tests\\tests\\image-diff.spec.ts')
+	// 	const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+	// 	const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
+
+	// 	expect(tests.length).toBe(1)
+	// 	expect(snapshotAssertions).toBe(1)
+    // });
     it('jupyterlab_jupyterlab-git\\ui-tests\\tests\\merge-commit.spec.ts', () => {
         const sourceCode = `
 			import \{ test \} from '@jupyterlab/galata';
@@ -3528,6 +3571,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\ui-tests\\tests\\merge-commit.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -3612,6 +3656,7 @@ describe('jupyterlab_jupyterlab-git', () => {
 
 		const tests = extractFromSource(sourceCode, 'jupyterlab_jupyterlab-git\\ui-tests\\tests\\merge-conflict.spec.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });

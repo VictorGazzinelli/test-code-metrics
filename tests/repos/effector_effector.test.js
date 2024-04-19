@@ -88,6 +88,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\babel\\__tests__\\babel-plugin.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -210,6 +211,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\babel\\__tests__\\raw-config.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -326,6 +328,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\compat\\browser.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -718,6 +721,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\attach.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -1578,6 +1582,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\clearNode.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(42)
     });
@@ -1972,6 +1977,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\combine.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -2024,6 +2030,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\createApi.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -2070,6 +2077,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\createStoreObject.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -2245,6 +2253,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\createWatch.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -2915,6 +2924,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\derived.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(55)
     });
@@ -3275,6 +3285,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\domain.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -3433,6 +3444,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\effect\\di.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -3719,6 +3731,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\effect\\fxID.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -4156,6 +4169,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\effect\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -4212,6 +4226,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\effect\\name.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -4525,6 +4540,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\effector.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -4562,6 +4578,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\event\\deepWatch.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -4656,6 +4673,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\event\\di.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4692,6 +4710,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\event\\filter.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4760,6 +4779,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\event\\filterMap.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4880,6 +4900,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\event\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -4922,6 +4943,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\event\\name.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -5188,6 +5210,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\fork\\allSettled.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -5235,6 +5258,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\fork\\factory.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -6110,6 +6134,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\fork\\fork.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(31)
     });
@@ -6609,6 +6634,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\fork\\hydrate.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -7313,6 +7339,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\fork\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(26)
     });
@@ -7425,6 +7452,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\fork\\scopeBind.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -8130,6 +8158,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\fork\\serialize.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(34)
     });
@@ -8315,6 +8344,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\forward.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -8676,6 +8706,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\guard.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -8821,6 +8852,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\imperativeCalls.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -9076,6 +9108,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -9963,6 +9996,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\inspect.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -10009,6 +10043,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\is.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -10168,6 +10203,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\kernelEdgeCases.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -10199,6 +10235,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\merge.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -10297,6 +10334,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\multiPass.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -10422,6 +10460,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\naming.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -10670,6 +10709,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\observable.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -10872,6 +10912,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\perf.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11134,6 +11175,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\region.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -11208,6 +11250,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\restore.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -11569,6 +11612,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\sample\\order.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -12360,6 +12404,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\sample\\sample.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(48)
     });
@@ -12949,6 +12994,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\split.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -13127,6 +13173,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\store\\diamond-deps.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -13485,6 +13532,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\store\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -13853,6 +13901,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\store\\lists.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -14157,6 +14206,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\store\\on.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -14400,6 +14450,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\store\\reset.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -14420,6 +14471,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\store\\stackSafety.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -14452,6 +14504,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\store\\updates.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -14604,6 +14657,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\effector\\__tests__\\store\\watcher.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -15117,6 +15171,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\classList.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -15234,6 +15289,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\handler.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -15924,6 +15980,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -16447,6 +16504,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\list.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -17569,6 +17627,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\reactiveTreeLaws.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -18507,6 +18566,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\rec.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -18800,6 +18860,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\ssr\\block.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -19131,6 +19192,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\ssr\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -19175,6 +19237,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\ssr\\renderStatic.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -19339,6 +19402,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\tree.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -19984,6 +20048,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\variant.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -20155,6 +20220,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\forest\\__tests__\\visible.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -20433,6 +20499,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\createComponent.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -20505,6 +20572,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\createContextComponent.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -20855,6 +20923,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\createGate.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -20965,6 +21034,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\createStoreConsumer.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -21067,6 +21137,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\index.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -21130,6 +21201,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\rerendering.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -21262,6 +21334,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\rfc1.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -22523,6 +22596,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\scopes.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(23)
     });
@@ -22634,6 +22708,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\shapeProtocol.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -22714,6 +22789,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\useEvent.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -23355,6 +23431,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\useList.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -24345,6 +24422,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\useStore.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(22)
     });
@@ -25582,6 +25660,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\react\\__tests__\\base\\useUnit.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -26044,6 +26123,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\solid\\__tests__\\scopes.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -26145,6 +26225,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\solid\\__tests__\\shapeProtocol.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -26561,6 +26642,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\solid\\__tests__\\useUnit.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -26833,6 +26915,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\src\\runner\\manifold\\__tests__\\boolAndFlag.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -27183,6 +27266,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\src\\runner\\manifold\\__tests__\\computeVariants.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -27726,6 +27810,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\src\\runner\\manifold\\__tests__\\separate.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -28393,6 +28478,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\src\\runner\\manifold\\__tests__\\suiteGenerator.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -28718,6 +28804,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\attach.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -28790,6 +28877,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\clearNode.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -29369,6 +29457,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\combine.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(35)
     });
@@ -29588,6 +29677,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\createApi.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -29851,6 +29941,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\domain.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -30376,6 +30467,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\effect.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(37)
     });
@@ -30700,6 +30792,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\event.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(25)
     });
@@ -31003,6 +31096,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\fork.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -31407,6 +31501,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\forward.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(27)
     });
@@ -33521,6 +33616,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\generated\\guard.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(42)
     });
@@ -35406,6 +35502,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\generated\\sampleArrayTarget.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(14)
     });
@@ -36037,6 +36134,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\generated\\sampleClockArray.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(15)
     });
@@ -39325,6 +39423,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\generated\\sampleFilter.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(82)
     });
@@ -40808,6 +40907,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\generated\\sampleReturn.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(24)
     });
@@ -41685,6 +41785,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\guard\\guardArrayTarget.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -41799,6 +41900,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\guard\\guardClockArray.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -41980,6 +42082,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\guard\\guardOther.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -42177,6 +42280,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\guard\\guardReturn.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -42610,6 +42714,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\guard\\guardWideNarrow.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -43290,6 +43395,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\guard.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(38)
     });
@@ -43435,6 +43541,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -43511,6 +43618,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\launch.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -43679,6 +43787,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\restore.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -44246,6 +44355,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sample\\arrayTarget.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(34)
     });
@@ -44705,6 +44815,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sample\\clockArray.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -44945,6 +45056,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sample\\implicitCombine.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -45759,6 +45871,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sample\\sample.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(42)
     });
@@ -46020,6 +46133,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sample\\targetForwarding.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -46623,6 +46737,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sampleFilter\\sampleFilterArrayTarget.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -46737,6 +46852,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sampleFilter\\sampleFilterClockArray.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -47185,6 +47301,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sampleFilter\\sampleFilterOther.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(18)
     });
@@ -47391,6 +47508,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sampleFilter\\sampleFilterReturn.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -47801,6 +47919,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sampleFilter\\sampleFilterWideNarrow.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -48574,6 +48693,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\sampleFilter.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(46)
     });
@@ -50766,6 +50886,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\split.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(96)
     });
@@ -51099,6 +51220,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector\\store.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -51437,6 +51559,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector-react\\effectorReact.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -51583,6 +51706,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector-react\\useList.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -51731,6 +51855,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector-react\\useStoreMap.test.tsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -51960,6 +52085,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\effector-vue\\effectorVue.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -52124,6 +52250,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\types\\__tests__\\forest\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -52372,6 +52499,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\vue\\__tests__\\createGate.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -52762,6 +52890,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\vue\\__tests__\\index.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -53121,6 +53250,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\vue\\__tests__\\optionsApi.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -53176,6 +53306,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\vue\\__tests__\\useStore.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -53338,6 +53469,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\vue\\__tests__\\useStoreMap.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -53610,6 +53742,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\vue\\__tests__\\useVModel.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -53666,6 +53799,7 @@ describe('effector_effector', () => {
 
 		const tests = extractFromSource(sourceCode, 'effector_effector\\src\\vue\\__tests__\\VueSSRPlugin.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });

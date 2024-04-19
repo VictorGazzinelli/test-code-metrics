@@ -71,6 +71,7 @@ describe('rebassjs_grid', () => {
 
 		const tests = extractFromSource(sourceCode, 'rebassjs_grid\\tests\\emotion.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -164,6 +165,7 @@ describe('rebassjs_grid', () => {
 
 		const tests = extractFromSource(sourceCode, 'rebassjs_grid\\tests\\index.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });

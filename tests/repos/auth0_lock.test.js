@@ -39,6 +39,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\auth_button.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -259,6 +260,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\database\\actions.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -422,6 +424,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\database\\index.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -498,6 +501,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\database\\login_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -521,6 +525,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\database\\password_reset_confirmation.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -655,6 +660,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\database\\reset_password.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -678,6 +684,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\database\\signed_up_confirmation.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -818,6 +825,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\enterprise\\actions.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -864,6 +872,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\enterprise\\hrd_pane.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -925,6 +934,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\enterprise\\hrd_screen.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1051,6 +1061,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\enterprise\\quick_auth_screen.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -1128,6 +1139,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\passwordless\\ask_vcode.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -1151,6 +1163,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\passwordless\\email_sent_confirmation.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -1475,6 +1488,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\passwordless\\passwordless.actions.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(23)
     });
@@ -1604,6 +1618,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\connection\\passwordless\\passwordless.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -1700,6 +1715,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\actions.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -1753,6 +1769,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\client\\index.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -2050,6 +2067,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\index.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(16)
     });
@@ -2103,6 +2121,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\remote_data.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -2126,6 +2145,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\signed_in_confirmation.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -2289,6 +2309,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\sso\\last_login_screen.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -2505,6 +2526,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\tenant.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -2608,6 +2630,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\web_api\\helper.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -3219,6 +3242,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\web_api\\p2_api.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(44)
     });
@@ -3300,6 +3324,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\core\\web_api.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -3432,6 +3457,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\engine\\classic\\login.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -3486,6 +3512,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\engine\\classic\\mfa_login_screen.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -3628,6 +3655,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\engine\\classic\\sign_up_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -3805,6 +3833,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\engine\\classic\\sign_up_screen.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(13)
     });
@@ -3837,6 +3866,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\engine\\classic.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -3924,6 +3954,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\engine\\passwordless\\social_or_email_login_screen.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4011,6 +4042,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\engine\\passwordless\\social_or_phone_number_login_screen.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4074,6 +4106,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\engine\\passwordless.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4128,6 +4161,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\captcha\\recaptchav2.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4182,6 +4216,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\captcha\\recaptcha_enterprise.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -4271,6 +4306,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\captcha.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -4406,6 +4442,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\custom_input.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -4447,6 +4484,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\email.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -4574,6 +4612,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\email_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -4620,6 +4659,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\field.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(5)
     });
@@ -4717,6 +4757,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\login_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -4793,6 +4834,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\mfa_code_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -4859,6 +4901,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\option_selection_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -4898,6 +4941,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\password.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -5021,6 +5065,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\password_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -5120,6 +5165,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\phone_number_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -5237,6 +5283,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\social_buttons_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -5399,6 +5446,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\username.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(17)
     });
@@ -5532,6 +5580,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\username_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(8)
     });
@@ -5563,6 +5612,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\vcode.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -5670,6 +5720,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\field\\vcode_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -5762,6 +5813,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\i18n.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -5887,6 +5939,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\quick-auth\\actions.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -6007,6 +6060,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\ui\\box\\chrome.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6036,6 +6090,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\ui\\box\\confirmation_pane.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6185,6 +6240,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\ui\\box\\container.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -6279,6 +6335,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\ui\\box\\global_message.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -6316,6 +6373,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\ui\\input\\email_input.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6341,6 +6399,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\ui\\input\\input_wrap.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6375,6 +6434,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\ui\\input\\password\\password_strength.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -6445,6 +6505,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\ui\\input\\password_input.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -6481,6 +6542,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\utils\\format.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6575,6 +6637,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\src\\__tests__\\utils\\url_utils.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -6783,6 +6846,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\captcha.corporate.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -6985,6 +7049,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\captcha.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -7192,6 +7257,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\captcha_signup.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(11)
     });
@@ -7648,6 +7714,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\connection_pick.ui.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(19)
     });
@@ -7929,6 +7996,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\enterprise_quick_auth.ui.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(12)
     });
@@ -8107,6 +8175,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\hooks.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(7)
     });
@@ -8167,6 +8236,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\i18n.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -8754,6 +8824,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\layout.ui.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(20)
     });
@@ -8955,6 +9026,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\mfa_ro.ui.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -9396,6 +9468,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\out-of-date\\cred\\index.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(46)
     });
@@ -9480,6 +9553,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\out-of-date\\gravatar\\index.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(9)
     });
@@ -9659,6 +9733,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\out-of-date\\gravatar\\web_api.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(10)
     });
@@ -9719,6 +9794,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\out-of-date\\index.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(2)
     });
@@ -10189,6 +10265,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\out-of-date\\lock\\index.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(54)
     });
@@ -10573,6 +10650,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\out-of-date\\passwordless\\emailcode.acceptance.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(43)
     });
@@ -11014,6 +11092,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\out-of-date\\passwordless\\magiclink.acceptance.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(43)
     });
@@ -11495,6 +11574,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\out-of-date\\passwordless\\sms.acceptance.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(52)
     });
@@ -11571,6 +11651,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\override_options.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11610,6 +11691,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\regression.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11737,6 +11819,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\show_with_flash_message.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });
@@ -11827,6 +11910,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\sign_up_terms_agreement.ui.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(4)
     });
@@ -11873,6 +11957,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\social_login.test.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
@@ -11909,6 +11994,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\utils\\id_utils.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(3)
     });
@@ -11929,6 +12015,7 @@ describe('auth0_lock', () => {
 
 		const tests = extractFromSource(sourceCode, 'auth0_lock\\test\\utils\\string_utils.js')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });

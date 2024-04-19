@@ -90,6 +90,7 @@ describe('prettier_tslint-config-prettier', () => {
 
 		const tests = extractFromSource(sourceCode, 'prettier_tslint-config-prettier\\tools\\checker.test.ts')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(6)
     });

@@ -21,6 +21,7 @@ describe('reactjsresources_react-webpack-babel', () => {
 
 		const tests = extractFromSource(sourceCode, 'reactjsresources_react-webpack-babel\\src\\__tests__\\app.test.jsx')
 		const assertions = tests.flatMap(test => test.assertions).filter(assertion => ['expect', 'assert'].includes(assertion.identifier)).length;
+		const snapshotAssertions = tests.flatMap(test => test.assertions).filter(assertion => assertion.isFileSnapshot || assertion.isInlineSnapshot).length;
 
 		expect(tests.length).toBe(1)
     });
