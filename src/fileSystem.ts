@@ -11,7 +11,6 @@ export function writeFile(content: string, path: string): void
     fs.writeFileSync(path, content, {encoding: 'utf-8'});
 }
 
-//writeFile
 export function readDir(path: string): fs.Dirent[]
 {
     return fs.readdirSync(path, { withFileTypes: true });
@@ -48,7 +47,7 @@ export function extractZip(zipFilePath: string, outputPath: string): void
     zip.extractAllTo(outputPath, true);
 }
 
-export async function tryRemoveDirectory(path: string): Promise<void>
+export async function tryRemoveDirectoryAsync(path: string): Promise<void>
 {
     await attempt(() => rimrafSync(path))
 }

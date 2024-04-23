@@ -48,14 +48,14 @@ astroturfcss/astroturf,45,2,78,2,0,1,0
 atlassian/changesets,254,13,548,19,0,0,1
 atomiks/tippyjs-react,37,4,68,5,1,0,0
 atomiks/tippyjs,299,11,531,11,1,0,0
-auth0/lock,739,54,876,54,1,0,0
+auth0/lock,739,171,876,172,1,0,0
 autodesk/react-base-table,22,22,22,22,1,0,0
 automattic/simplenote-electron,72,1,110,1,1,0,0
 automattic/wp-calypso,11680,93,14734,96,0,0,1
 awslabs/diagram-maker,699,91,785,91,1,0,0
 axe312ger/sqip,60,25,126,27,1,0,0
 babel/babel-upgrade,39,37,44,38,1,0,0
-babel/minify,42,18,50,20,1,0,0
+babel/minify,42,18,51,20,1,0,0
 baidu/amis,830,419,2541,553,0,0,1
 balajmarius/svg2jsx,15,15,40,15,1,0,0
 banga/git-split-diffs,58,17,86,18,0,0,1

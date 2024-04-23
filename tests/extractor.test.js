@@ -1,5 +1,5 @@
 const { extractData } = require('../src/extractor');
-const { ensureDirectoryCreatedAsync, extractZip, getFolderPath, tryRemoveDirectory } = require('../src/fileSystem');
+const { ensureDirectoryCreatedAsync, extractZip, getFolderPath, tryRemoveDirectoryAsync } = require('../src/fileSystem');
 const metrics = require('./fixtures/metrics.json');
 
 describe('Metrics extraction', () => {
@@ -35,7 +35,7 @@ describe('Metrics extraction', () => {
 
             afterEach(async () => {
                 if (folderPath) {
-                    await tryRemoveDirectory(folderPath);
+                    await tryRemoveDirectoryAsync(folderPath);
                 }
             });
         });

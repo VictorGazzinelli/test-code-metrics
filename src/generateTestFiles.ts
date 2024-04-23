@@ -1,17 +1,19 @@
-import { ensureDirectoryCreatedAsync, extractZip, getFolderPath, readDir, getTestFiles, readFile, tryRemoveDirectory, writeFile } from './fileSystem';
+import { ensureDirectoryCreatedAsync, extractZip, getFolderPath, readDir, getTestFiles, readFile, tryRemoveDirectoryAsync, writeFile } from './fileSystem';
 import { extractFromSource } from './extractor'
 
 type PathObject = { path: string, [key: string]: any };
+
 type GroupedObjects = { [prefix: string]: PathObject[] };
 
-function groupByPathPrefix(objects: PathObject[]): GroupedObjects {
+function groupByPathPrefix(objects: PathObject[]): GroupedObjects 
+{
     const groups = new Map<string, PathObject[]>();
 
-    for (const obj of objects) {
+    for (const obj of objects) 
+    {
         const [prefix] = obj.path.split("\\");
-        if (!groups.has(prefix)) {
+        if (!groups.has(prefix))
             groups.set(prefix, []);
-        }
         groups.get(prefix)?.push(obj);
     }
 
@@ -23,26 +25,28 @@ function groupByPathPrefix(objects: PathObject[]): GroupedObjects {
     return groupedObjects;
 }
 
-function writeTestFiles(groupedObjects: GroupedObjects, directory: string): void {
-    for (const key in groupedObjects) {
+function writeTestFiles(groupedObjects: GroupedObjects, directory: string): void 
+{
+    for (const key in groupedObjects) 
+    {
         const fileName = `${directory}/${key}.test.js`;
         let content = `const { extractFromSource } = require('../../src/extractor');\n`;
         content += `\n`
         content += `describe('${key}', () => {\n`;
-
-        for (const obj of groupedObjects[key]) {
+        for (const obj of groupedObjects[key]) 
+        {
             content += `    it('${obj.path.replace(/\\/g, '\\\\')}', () => {\n`;
             content += `        const sourceCode = \`\n`;
-            const indentedAndEscapedSourceCode = obj.sourceCode
-                .replace(/\\/g, '\\\\') // Escapes backslashes first to avoid escaping escape characters created in the next step
-                .replace(/`/g, '\\`') // Escapes backticks
-                .replace(/\$/g, '\\$') // Escapes dollar signs
-                .replace(/{/g, '\\{') // Escapes opening curly braces
-                .replace(/}/g, '\\}') // Escapes closing curly braces
+            const embeddedTestSourceCode = obj.sourceCode
+                .replace(/\\/g, '\\\\')
+                .replace(/`/g, '\\`')
+                .replace(/\$/g, '\\$')
+                .replace(/{/g, '\\{')
+                .replace(/}/g, '\\}')
                 .split('\n')
-                .map((line: string) => `\t\t\t${line}`) // Adds indentation
+                .map((line: string) => `\t\t\t${line}`)
                 .join('\n');
-            content += `${indentedAndEscapedSourceCode}`;
+            content += `${embeddedTestSourceCode}`;
             content += `\`\n`;
             content += `\n`;
             content += `\t\tconst tests = extractFromSource(sourceCode, '${obj.path.replace(/\\/g, '\\\\')}')\n`;
@@ -55,9 +59,7 @@ function writeTestFiles(groupedObjects: GroupedObjects, directory: string): void
             content += `\n`;
             content += `    });\n`;
         }
-
         content += `});\n`;
-
         writeFile(content, fileName)
     }
 }
@@ -67,21 +69,11 @@ async function main()
 {
 	const repos =  readDir('repos');
     const testRepos = [
-        'rebassjs/grid',
-        'nitin42/making-a-custom-react-renderer',
-        'prettier/tslint-config-prettier',
-        'plus1tv/react-anime',
-        'reactjsresources/react-webpack-babel',
-        'mateodelnorte/meta',
-        'geekyants/react-native-easy-grid',
-        'hyperfuse/react-anime',
         'express-validator/express-validator',
         'poooi/poi',
         'ealush/vest',
         'roxiness/routify',
-        'babel/minify',
         'jupyterlab/jupyterlab-git',
-        'auth0/lock',
         'infernojs/inferno',
         'react-hook-form/react-hook-form',
         'frontity/frontity',
@@ -108,14 +100,16 @@ async function main()
 		await ensureDirectoryCreatedAsync(folderPath);
 		extractZip(repoPath, folderPath);
         const testFiles = getTestFiles(folderPath);
-        const testData = testFiles.map(testFilePath => {
-            const path = testFilePath;
-            const sourceCode = readFile(path);
-            const tests = extractFromSource(sourceCode, path)
-            return {path, sourceCode, tests}
-        }).filter(obj => obj.tests.length > 0)
+        const testData = testFiles
+            .map(testFilePath => {
+                const path = testFilePath;
+                const sourceCode = readFile(path);
+                const tests = extractFromSource(sourceCode, path)
+                return {path, sourceCode, tests}
+            })
+            .filter(obj => obj.tests.length > 0)
         allTestData = allTestData.concat(testData);
-        await tryRemoveDirectory(folderPath)
+        await tryRemoveDirectoryAsync(folderPath)
 	}
     const allGroupedTestData: GroupedObjects = groupByPathPrefix(allTestData)
     const testsDirectory = 'tests/repos';

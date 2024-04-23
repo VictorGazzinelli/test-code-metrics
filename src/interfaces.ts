@@ -15,17 +15,13 @@ export interface Test
     identifier: string;
     name: string;
     assertions: Assert[];
+    repoName: string;
+    fileName: string;
     startLine: number;
     endLine: number;
     codeSnippet: string;
 }
-
-export interface Func
-{
-    identifier: string;
-    assertions: Assert[];
-}
-  
+ 
 export interface Assert 
 {
     identifier: string;

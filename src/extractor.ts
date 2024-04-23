@@ -1,39 +1,35 @@
-import * as parser from '@babel/parser';
 //@ts-ignore
+import * as parser from '@babel/parser';
 import traverse from '@babel/traverse';
 import { getTestFiles, readFile } from "./fileSystem";
-import { Data, Func, Metrics, Test } from "./interfaces";
+import { Data, Metrics, Test } from "./interfaces";
 
 function getPlugins (filePath: string): any[]
 {
     if(filePath.includes('kaorun343_vue-property-decorator'))
         return [
-            "typescript", // TypeScript support
-            ["decorators", { decoratorsBeforeExport: true }], // Decorators, legacy configuration is preferred here
-            "classProperties", // Support for class properties
-            "optionalChaining", // Optional chaining (?. operator)
-            //@ts-ignore
-            "vue", // Vue support
-            "importAssertions", // Import assertions (for module imports)
-            "jsx", // JSX support
-            ["optionalChainingAssign", { version: "2023-07" }], // Optional chaining assignment with specific version configuration
-            //@ts-ignore
-            "vue-jsx", // Support for JSX in Vue
-            "explicitResourceManagement", // Support for managing resources explicitly
+            "typescript",
+            ["decorators", { decoratorsBeforeExport: true }],
+            "classProperties",
+            "optionalChaining",
+            "vue",
+            "importAssertions",
+            "jsx",
+            ["optionalChainingAssign", { version: "2023-07" }],
+            "vue-jsx",
+            "explicitResourceManagement",
         ]
-        if(filePath.includes('react-grid-layout_react-resizable'))
-            return [
-                "jsx",
-                //"typescript",
-                "decorators-legacy",
-                "classProperties",
-                "explicitResourceManagement",
-                "importAssertions",
-                //@ts-ignore
-                "vue-jsx",
-                ["optionalChainingAssign", { version: "2023-07" }],
-                "flow"
-            ]
+    if(filePath.includes('react-grid-layout_react-resizable'))
+        return [
+            "jsx",
+            "flow",
+            "decorators-legacy",
+            "classProperties",
+            "explicitResourceManagement",
+            "importAssertions",
+            "vue-jsx",
+            ["optionalChainingAssign", { version: "2023-07" }],
+        ]
     return [
         "jsx",
         "typescript",
@@ -41,7 +37,6 @@ function getPlugins (filePath: string): any[]
         "classProperties",
         "explicitResourceManagement",
         "importAssertions",
-        //@ts-ignore
         "vue-jsx",
         ["optionalChainingAssign", { version: "2023-07" }],
     ]
@@ -50,54 +45,36 @@ function getPlugins (filePath: string): any[]
 export function extractFromSource (sourceCode: string, filePath: string) 
 {
     const testMethods: Test[] = [];
-    const functions: Func[] = [];
+    const expectAliases: string[] = ["expect", "jestExpect", "expectComponent", "expectShallowComponent"];
     try
     {
         const ast = parser.parse(sourceCode, {
-            sourceType: 'module', // Assuming ES modules, change as needed
+            sourceType: 'module',
             plugins: getPlugins(filePath)
         });
-        
         let currentTest: Test | null = null;
-        let currentFunction: Func | null = null;
         traverse(ast, {
             enter(path: any) 
             {
-                if (path.node.type === 'FunctionDeclaration')
-                {
-                    currentFunction = {
-                        identifier: path.node.id?.name,
-                        assertions: [],
-                    }
-                    functions.push(currentFunction);
-                }
                 if (path.node.type === 'CallExpression' && ['it', 'test'].includes(path.node.callee.name))
-                { // Adjust above parameters
+                {
                     const args = path.node.arguments.map((arg: any) => arg.value);
                     currentTest = {
                         identifier: path.node.callee.name,
                         name: args[0],
                         assertions: [],
+                        repoName: filePath.split("\\")[0].replace('_','/'),
+                        fileName: filePath.split("\\").pop()!,
                         startLine: path.node.loc.start.line,
                         endLine: path.node.loc.end.line,
                         codeSnippet: sourceCode.split('\n').slice(path.node.loc.start.line - 1, path.node.loc.end.line).join('\n')
                     };
                     testMethods.push(currentTest);
                 }
-                if (currentFunction && path.node.type === 'MemberExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.object?.callee?.name))
-                { // Adjust above parameters
-                    const currentFuncAssert = {
-                        identifier: path.node.object?.callee?.name,
-                        isFileSnapshot: path.node.property && path.node.property.type === 'Identifier' && path.node.property.name === 'toMatchSnapshot',
-                        isInlineSnapshot: path.node.property && path.node.property.type === 'Identifier' && path.node.property.name === 'toMatchInlineSnapshot',
-                    };
-                    currentFunction.assertions.push(currentFuncAssert);
-                }
                 if (currentTest) {
                     let currentTestAssert = null;
-                
                     // Scenario 1: Direct CallExpression without MemberExpression expect(true)
-                    if (path.node.type === 'CallExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.callee.name) && !path.parentPath.isMemberExpression()) {
+                    if (path.node.type === 'CallExpression' && expectAliases.includes(path.node.callee.name) && !path.parentPath.isMemberExpression()) {
                         currentTestAssert = {
                             identifier: path.node.callee.name,
                             isFileSnapshot: false,
@@ -105,7 +82,7 @@ export function extractFromSource (sourceCode: string, filePath: string)
                         };
                     }                        
                     // Scenario 2: Handling MemberExpression specifically (original scenario) expect().toMatchSnapshot() or expect().toMatchInlineSnapshot()
-                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.object?.callee?.name) && !['rejects','resolves'].includes(path.node.property.name)) {
+                    else if (path.node.type === 'MemberExpression' && expectAliases.includes(path.node.object?.callee?.name) && !['rejects','resolves'].includes(path.node.property.name)) {
                         currentTestAssert = {
                             identifier: path.node.object?.callee?.name,
                             isFileSnapshot: path.node.property && path.node.property.type === 'Identifier' && path.node.property.name === 'toMatchSnapshot',
@@ -113,7 +90,7 @@ export function extractFromSource (sourceCode: string, filePath: string)
                         };
                     }
                     // Scenario 3: Handling MemberExpression with promises await expect().rejects.toMatchSnapshot() or expect().resolves.toMatchInlineSnapshot()
-                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.object?.callee?.name) && ['rejects','resolves'].includes(path.node.property.name) && path.parentPath?.node?.type === 'MemberExpression' && path.parentPath?.node?.property) {
+                    else if (path.node.type === 'MemberExpression' && expectAliases.includes(path.node.object?.callee?.name) && ['rejects','resolves'].includes(path.node.property.name) && path.parentPath?.node?.type === 'MemberExpression' && path.parentPath?.node?.property) {
                         currentTestAssert = {
                             identifier: path.node.object?.callee?.name,
                             isFileSnapshot: path.parentPath.node.property.name === 'toMatchSnapshot',
@@ -136,14 +113,13 @@ export function extractFromSource (sourceCode: string, filePath: string)
                             isInlineSnapshot: false,
                         };
                     }
-                    else if (path.node.type === 'MemberExpression' && ["expect", "jestExpect", "expectComponent", "expectShallowComponent"].includes(path.node.object?.callee?.name) && ['rejects','resolves'].includes(path.node.property.name) && path.node.object.arguments?.length > 0 && path.node.object.arguments[0].arguments?.length > 0 && path.node.object.arguments[0].arguments[0].type == 'ArrayExpression') {
+                    else if (path.node.type === 'MemberExpression' && expectAliases.includes(path.node.object?.callee?.name) && ['rejects','resolves'].includes(path.node.property.name) && path.node.object.arguments?.length > 0 && path.node.object.arguments[0].arguments?.length > 0 && path.node.object.arguments[0].arguments[0].type == 'ArrayExpression') {
                         currentTestAssert = {
                             identifier: path.node.object?.callee?.name,
                             isFileSnapshot: false,
                             isInlineSnapshot: false,
                         };
                     }
-                
                     if (currentTestAssert) {
                         currentTest.assertions.push(currentTestAssert);
                     }
@@ -151,9 +127,7 @@ export function extractFromSource (sourceCode: string, filePath: string)
             },
             exit(path: any) 
             {
-                if (path.node.type === 'FunctionDeclaration' && currentFunction && path.node.id?.name === currentFunction.identifier)
-                    currentFunction = null
-                if (path.node.type === 'CallExpression' && ['it', 'test'].includes(path.node.callee.name)) // Adjust this parameters
+                if (path.node.type === 'CallExpression' && ['it', 'test'].includes(path.node.callee.name))
                     currentTest = null;
             },
         });
